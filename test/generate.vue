@@ -1,10 +1,10 @@
 <template>
-  <AutoPage :pageSetting="pageSetting" :searchData="searchData" />
+  <AutoPage :pageSetting="pageSetting" :allData="allData" />
 </template>
 <script setup>
 import { reactive } from 'vue'
 import { createPageSetting, AutoPage } from 'mst-auto-page'
-const searchData = reactive([])
+
 const allData = reactive([
   {
     select: false,
@@ -18,38 +18,300 @@ const allData = reactive([
   },
   {
     select: false,
+    name: 'mesut Özcan 1',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan2',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan 3',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
+    name: 'mesut Özcan',
+    status: 'Passive'
+  },
+  {
+    select: false,
     name: 'mesut Özcan',
     status: 'Passive'
   }
 ])
-
-const toLowerCaseByTurkish = str =>
-  str
-    .replace(/Ğ/g, 'ğ')
-    .replace(/Ü/g, 'ü')
-    .replace(/Ş/g, 'ş')
-    .replace(/I/g, 'ı')
-    .replace(/İ/g, 'i')
-    .replace(/Ö/g, 'ö')
-    .replace(/Ç/g, 'ç')
-    .toLowerCase()
-const runSearch = (autoSearch = null) => {
-  let response =
-    autoSearch && autoSearch.value.length > 0
-      ? allData.filter(element => {
-          let fullsearch = []
-          autoSearch.alans.forEach(d => {
-            fullsearch.push(toLowerCaseByTurkish(element[d].toString()))
-          })
-          const words = fullsearch.join(' ')
-          return words.indexOf(toLowerCaseByTurkish(autoSearch.value)) !== -1
-        })
-      : allData
-
-  searchData.splice(0, searchData.length)
-  searchData.push(...response)
-  // updData(searchData)
-}
 
 const columns = [
   {
@@ -100,11 +362,6 @@ const columns = [
 const pageSetting = reactive(new createPageSetting())
 pageSetting.preHandler.dynamic = false
 pageSetting.preHandler.pagination.pageSize = 25
-pageSetting.preHandler.tableCahngePage = (page, query) => {
-  pageSetting.preHandler.loader = true
-  pageSetting.preHandler.pagination.page = page
-}
-
 pageSetting.pageData = [
   {
     class: 'card w-100',
@@ -122,10 +379,7 @@ pageSetting.pageData = [
                 data: {
                   alans: ['name'],
                   value: '',
-                  class: 'form-control',
-                  callback: (element, data) => {
-                    runSearch(data)
-                  }
+                  class: 'form-control'
                 }
               },
               {
@@ -155,6 +409,4 @@ pageSetting.pageData = [
     data: {}
   }
 ]
-
-runSearch()
 </script>
