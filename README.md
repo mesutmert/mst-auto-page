@@ -2,7 +2,7 @@
 
 # AutoPage - Vue3 Component
 
-> Basic AutoPage and Datatable component for Vue3 in typescript and Composition API. It has basic functionality such as Filter/Search, pagination etc.
+> Basic AutoPage and Datatable component for Vue3 in  Composition API. It has basic functionality such as Filter/Search, pagination etc.
 
 
 ## Install
