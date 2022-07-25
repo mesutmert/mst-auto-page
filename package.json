@@ -1,6 +1,6 @@
 {
   "name": "mst-auto-page",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Auto Generated Page and DataTable component with basic pagination, search filters etc for Vue3",
   "keywords": [
     "datatable",
