@@ -1,0 +1,45 @@
+{
+  "name": "mst-auto-page",
+  "version": "1.0.0",
+  "description": "Auto Generated Page and DataTable component with basic pagination, search filters etc for Vue3",
+  "keywords": [
+    "datatable",
+    "vue3",
+    "vue datatable",
+    "pagination",
+    "auto page",
+    "auto page generated",
+    "auto page generated with json"
+  ],
+  "author": {
+    "name": "Mesut Özcan",
+    "url": "https://github.com/mesutmert"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "test"
+  ],
+  "main": "./dist/mst-auto-page.umd.js",
+  "module": "./dist/mst-auto-page.js",
+  "exports": {
+    ".": {
+      "import": "./dist/mst-auto-page.js",
+      "require": "./dist/mst-auto-page.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.0",
+    "vite": "^3.0.0"
+  }
+}
