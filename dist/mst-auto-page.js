@@ -1,557 +1,511 @@
-import { ref as B, watch as E, computed as P, resolveComponent as R, openBlock as a, createElementBlock as l, Fragment as y, normalizeClass as g, normalizeStyle as N, createBlock as d, resolveDynamicComponent as $, createTextVNode as q, toDisplayString as x, createCommentVNode as k, renderSlot as j, createElementVNode as H, withDirectives as F, vModelCheckbox as U, withCtx as T, withModifiers as J, unref as h, createVNode as Y, Transition as G, renderList as O, vModelText as Q, vModelDynamic as W, vModelSelect as X, reactive as Z, onMounted as p } from "vue";
-import { useRoute as _, useRouter as ee } from "vue-router";
-const M = B(!1), te = (e = !1) => {
-  M.value = M.value == e ? !1 : e;
-}, z = () => {
-  M.value = !1;
-};
-E(() => M.value, (e, t) => {
-  e ? window.addEventListener("click", z) : window.removeEventListener("click", z);
-});
-const ae = ["href", "title"], le = ["src"], ne = ["title"], L = {
+import { ref as N, computed as z, resolveComponent as R, openBlock as t, createElementBlock as r, Fragment as y, normalizeClass as m, normalizeStyle as M, createBlock as c, resolveDynamicComponent as k, createTextVNode as K, toDisplayString as j, createCommentVNode as D, renderSlot as O, createElementVNode as x, withDirectives as P, vModelCheckbox as U, withCtx as H, withModifiers as J, unref as C, createVNode as Y, Transition as G, renderList as T, vModelText as Q, reactive as A, onMounted as B, vModelDynamic as W, vModelSelect as X, watch as V } from "vue";
+import { useRoute as Z, useRouter as _ } from "vue-router";
+const q = N(!1), ee = (e = !1) => {
+  q.value = q.value == e ? !1 : e;
+}, ae = ["href", "title"], te = ["src"], ne = ["title"], L = {
   __name: "ColonTable",
   props: {
     filedData: Object,
     rowData: Object
   },
   setup(e) {
-    const t = e, n = (u, D) => D === 1 ? Object.prototype.toString.call(u) === "[object Object]" : D === 2 ? Object.prototype.toString.call(u) === "[object Array]" : D === 3 ? Object.prototype.toString.call(u) === "[object String]" : D === 4 ? Object.prototype.toString.call(u) === "[object Number]" : D === 5 ? Object.prototype.toString.call(u) === "[object Null]" : !1, o = (u, D) => n(u, 1) ? Object.prototype.hasOwnProperty.call(u, D) : !1, i = P(() => t.rowData[t.filedData.key] ? t.rowData[t.filedData.key] : t.filedData.key), r = B(!1), s = (u, D) => {
-      M !== u && (window.innerHeight / 1.3 < D.clientY ? r.value = !0 : r.value = !1), te(u);
-    }, c = () => {
-      typeof t.filedData.callback == "function" && t.filedData.callback(t.rowData, t.filedData);
-    }, f = () => t.filedData.caseColon ? t.filedData.caseColon(t.rowData, t.filedData) : !0, m = () => o(t.filedData, "link") ? typeof t.filedData.link == "function" ? t.filedData.link(t.rowData) : t.rowData[t.filedData.link] ? t.rowData[t.filedData.link] : t.filedData.link : "", v = () => o(t.filedData, "style") ? typeof t.filedData.style == "function" ? t.filedData.style(t.rowData) : t.rowData[t.filedData.style] ? t.rowData[t.filedData.style] : t.filedData.style : "", w = () => o(t.filedData, "title") ? typeof t.filedData.title == "function" ? t.filedData.title(t.rowData) : t.rowData[t.filedData.title] ? t.rowData[t.filedData.title] : t.filedData.title : "", b = () => o(t.filedData, "name") ? typeof t.filedData.name == "function" ? t.filedData.name(t.rowData) : t.rowData[t.filedData.name] ? t.rowData[t.filedData.name] : t.filedData.name : "", C = () => o(t.filedData, "class") ? typeof t.filedData.class == "function" ? t.filedData.class(t.rowData) : t.filedData.class : "", A = () => typeof t.filedData.comp.data == "function" ? t.filedData.comp.data(t.rowData) : t.filedData.comp.data;
-    return (u, D) => {
-      const V = R("router-link");
-      return f() ? (a(), l(y, { key: 0 }, [
-        e.filedData.type === "link" ? (a(), l("a", {
+    const a = e, i = (h, f) => f === 1 ? Object.prototype.toString.call(h) === "[object Object]" : f === 2 ? Object.prototype.toString.call(h) === "[object Array]" : f === 3 ? Object.prototype.toString.call(h) === "[object String]" : f === 4 ? Object.prototype.toString.call(h) === "[object Number]" : f === 5 ? Object.prototype.toString.call(h) === "[object Null]" : !1, l = (h, f) => i(h, 1) ? Object.prototype.hasOwnProperty.call(h, f) : !1, s = z(() => a.rowData[a.filedData.key] ? a.rowData[a.filedData.key] : a.filedData.key), g = N(!1), d = (h, f) => {
+      q !== h && (window.innerHeight / 1.3 < f.clientY ? g.value = !0 : g.value = !1), ee(h);
+    }, n = () => {
+      typeof a.filedData.callback == "function" && a.filedData.callback(a.rowData, a.filedData);
+    }, o = () => a.filedData.caseColon ? a.filedData.caseColon(a.rowData, a.filedData) : !0, u = () => l(a.filedData, "link") ? typeof a.filedData.link == "function" ? a.filedData.link(a.rowData) : a.rowData[a.filedData.link] ? a.rowData[a.filedData.link] : a.filedData.link : "", p = () => l(a.filedData, "style") ? typeof a.filedData.style == "function" ? a.filedData.style(a.rowData) : a.rowData[a.filedData.style] ? a.rowData[a.filedData.style] : a.filedData.style : "", b = () => l(a.filedData, "title") ? typeof a.filedData.title == "function" ? a.filedData.title(a.rowData) : a.rowData[a.filedData.title] ? a.rowData[a.filedData.title] : a.filedData.title : "", v = () => l(a.filedData, "name") ? typeof a.filedData.name == "function" ? a.filedData.name(a.rowData) : a.rowData[a.filedData.name] ? a.rowData[a.filedData.name] : a.filedData.name : "", w = () => l(a.filedData, "class") ? typeof a.filedData.class == "function" ? a.filedData.class(a.rowData) : a.filedData.class : "", $ = () => typeof a.filedData.comp.data == "function" ? a.filedData.comp.data(a.rowData) : a.filedData.comp.data;
+    return (h, f) => {
+      const I = R("router-link");
+      return o() ? (t(), r(y, { key: 0 }, [
+        e.filedData.type === "link" ? (t(), r("a", {
           key: 0,
-          onClick: D[0] || (D[0] = (S) => c()),
-          class: g(C()),
-          href: m(),
-          title: w(),
-          style: N(v())
+          onClick: f[0] || (f[0] = (S) => n()),
+          class: m(w()),
+          href: u(),
+          title: b(),
+          style: M(p())
         }, [
-          e.filedData.name ? (a(), l(y, { key: 0 }, [
-            e.filedData.html ? (a(), d($(e.filedData.tag ? e.filedData.tag : "span"), {
+          e.filedData.name ? (t(), r(y, { key: 0 }, [
+            e.filedData.html ? (t(), c(k(e.filedData.tag ? e.filedData.tag : "span"), {
               key: 0,
-              innerHTML: b()
-            }, null, 8, ["innerHTML"])) : (a(), l(y, { key: 1 }, [
-              q(x(b()), 1)
+              innerHTML: v()
+            }, null, 8, ["innerHTML"])) : (t(), r(y, { key: 1 }, [
+              K(j(v()), 1)
             ], 64))
-          ], 64)) : k("", !0),
-          j(u.$slots, "default")
-        ], 14, ae)) : e.filedData.type === "img" ? (a(), l(y, { key: 1 }, [
-          H("img", {
-            class: g(C()),
-            src: b(),
-            onClick: D[1] || (D[1] = (S) => c())
-          }, null, 10, le),
-          j(u.$slots, "default")
-        ], 64)) : e.filedData.type === "checkbox" ? (a(), l(y, { key: 2 }, [
-          F(H("input", {
-            onClick: D[2] || (D[2] = (S) => c()),
-            "onUpdate:modelValue": D[3] || (D[3] = (S) => e.rowData.select = S),
+          ], 64)) : D("", !0),
+          O(h.$slots, "default")
+        ], 14, ae)) : e.filedData.type === "img" ? (t(), r(y, { key: 1 }, [
+          x("img", {
+            class: m(w()),
+            src: v(),
+            onClick: f[1] || (f[1] = (S) => n())
+          }, null, 10, te),
+          O(h.$slots, "default")
+        ], 64)) : e.filedData.type === "checkbox" ? (t(), r(y, { key: 2 }, [
+          P(x("input", {
+            onClick: f[2] || (f[2] = (S) => n()),
+            "onUpdate:modelValue": f[3] || (f[3] = (S) => e.rowData.select = S),
             type: "checkbox",
-            class: g(C()),
-            title: w(),
-            style: N(v())
+            class: m(w()),
+            title: b(),
+            style: M(p())
           }, null, 14, ne), [
             [U, e.rowData.select]
           ]),
-          j(u.$slots, "default")
-        ], 64)) : e.filedData.type === "router-link" ? (a(), d(V, {
+          O(h.$slots, "default")
+        ], 64)) : e.filedData.type === "router-link" ? (t(), c(I, {
           key: 3,
-          class: g(C()),
-          to: m(),
-          onClick: D[4] || (D[4] = (S) => c()),
-          title: w(),
-          style: N(v())
+          class: m(w()),
+          to: u(),
+          onClick: f[4] || (f[4] = (S) => n()),
+          title: b(),
+          style: M(p())
         }, {
-          default: T(() => [
-            e.filedData.name ? (a(), l(y, { key: 0 }, [
-              e.filedData.html ? (a(), d($(e.filedData.tag ? e.filedData.tag : "span"), {
+          default: H(() => [
+            e.filedData.name ? (t(), r(y, { key: 0 }, [
+              e.filedData.html ? (t(), c(k(e.filedData.tag ? e.filedData.tag : "span"), {
                 key: 0,
-                innerHTML: b()
-              }, null, 8, ["innerHTML"])) : (a(), l(y, { key: 1 }, [
-                q(x(b()), 1)
+                innerHTML: v()
+              }, null, 8, ["innerHTML"])) : (t(), r(y, { key: 1 }, [
+                K(j(v()), 1)
               ], 64))
-            ], 64)) : k("", !0),
-            j(u.$slots, "default")
+            ], 64)) : D("", !0),
+            O(h.$slots, "default")
           ]),
           _: 3
-        }, 8, ["class", "to", "title", "style"])) : e.filedData.type === "dropdown" ? (a(), d($(e.filedData.tag ? e.filedData.tag : "div"), {
+        }, 8, ["class", "to", "title", "style"])) : e.filedData.type === "dropdown" ? (t(), c(k(e.filedData.tag ? e.filedData.tag : "div"), {
           key: 4,
-          onClick: D[5] || (D[5] = J((S) => s(h(i), S), ["stop"])),
-          class: g(C()),
-          style: N(v()),
-          title: w(),
-          name: h(i)
+          onClick: f[5] || (f[5] = J((S) => d(C(s), S), ["stop"])),
+          class: m(w()),
+          style: M(p()),
+          title: b(),
+          name: C(s)
         }, {
-          default: T(() => [
-            (a(), d($("div"), {
-              innerHTML: b()
+          default: H(() => [
+            (t(), c(k("div"), {
+              innerHTML: v()
             }, null, 8, ["innerHTML"])),
             Y(G, {
               name: e.filedData.tname
             }, {
-              default: T(() => [
-                h(M) === h(i) ? (a(), d($(e.filedData.dTag ? e.filedData.dTag : "div"), {
+              default: H(() => [
+                C(q) === C(s) ? (t(), c(k(e.filedData.dTag ? e.filedData.dTag : "div"), {
                   key: 0,
-                  class: g([
+                  class: m([
                     e.filedData.dClass,
-                    r.value ? e.filedData.dClassUp : e.filedData.dClassDown
+                    g.value ? e.filedData.dClassUp : e.filedData.dClassDown
                   ]),
-                  id: h(i)
+                  id: C(s)
                 }, {
-                  default: T(() => [
-                    e.filedData.list ? (a(!0), l(y, { key: 0 }, O(e.filedData.list, (S, I) => (a(), d(L, {
-                      key: I + "-body",
+                  default: H(() => [
+                    e.filedData.list ? (t(!0), r(y, { key: 0 }, T(e.filedData.list, (S, E) => (t(), c(L, {
+                      key: E + "-body",
                       filedData: S,
                       rowData: e.rowData
-                    }, null, 8, ["filedData", "rowData"]))), 128)) : k("", !0)
+                    }, null, 8, ["filedData", "rowData"]))), 128)) : D("", !0)
                   ]),
                   _: 1
-                }, 8, ["class", "id"])) : k("", !0)
+                }, 8, ["class", "id"])) : D("", !0)
               ]),
               _: 1
             }, 8, ["name"]),
-            j(u.$slots, "default")
+            O(h.$slots, "default")
           ]),
           _: 3
-        }, 8, ["class", "style", "title", "name"])) : e.filedData.type === "comp" ? (a(), l(y, { key: 5 }, [
-          e.filedData.comp ? (a(), d($(e.filedData.tag ? e.filedData.tag : "div"), {
+        }, 8, ["class", "style", "title", "name"])) : e.filedData.type === "comp" ? (t(), r(y, { key: 5 }, [
+          e.filedData.comp ? (t(), c(k(e.filedData.tag ? e.filedData.tag : "div"), {
             key: 0,
-            class: g(C())
+            class: m(w())
           }, {
-            default: T(() => [
-              (a(), d($(e.filedData.comp.name), {
-                compData: A()
+            default: H(() => [
+              (t(), c(k(e.filedData.comp.name), {
+                compData: $()
               }, null, 8, ["compData"])),
-              j(u.$slots, "default")
+              O(h.$slots, "default")
             ]),
             _: 3
-          }, 8, ["class"])) : k("", !0)
-        ], 64)) : (a(), d($(e.filedData.tag ? e.filedData.tag : "div"), {
+          }, 8, ["class"])) : D("", !0)
+        ], 64)) : (t(), c(k(e.filedData.tag ? e.filedData.tag : "div"), {
           key: 6,
-          onClick: D[6] || (D[6] = (S) => c()),
-          class: g(C()),
-          title: w(),
-          style: N(v())
+          onClick: f[6] || (f[6] = (S) => n()),
+          class: m(w()),
+          title: b(),
+          style: M(p())
         }, {
-          default: T(() => [
-            e.filedData.list && e.filedData.body ? (a(!0), l(y, { key: 0 }, O(e.filedData.list, (S) => (a(), d(L, {
+          default: H(() => [
+            e.filedData.list && e.filedData.body ? (t(!0), r(y, { key: 0 }, T(e.filedData.list, (S) => (t(), c(L, {
               key: S.name,
               filedData: S,
               rowData: e.rowData
-            }, null, 8, ["filedData", "rowData"]))), 128)) : k("", !0),
-            e.filedData.name ? (a(), l(y, { key: 1 }, [
-              e.filedData.html ? (a(), d($("span"), {
+            }, null, 8, ["filedData", "rowData"]))), 128)) : D("", !0),
+            e.filedData.name ? (t(), r(y, { key: 1 }, [
+              e.filedData.html ? (t(), c(k("span"), {
                 key: 0,
-                innerHTML: b()
-              }, null, 8, ["innerHTML"])) : (a(), l(y, { key: 1 }, [
-                q(x(b()), 1)
+                innerHTML: v()
+              }, null, 8, ["innerHTML"])) : (t(), r(y, { key: 1 }, [
+                K(j(v()), 1)
               ], 64))
-            ], 64)) : k("", !0),
-            j(u.$slots, "default")
+            ], 64)) : D("", !0),
+            O(h.$slots, "default")
           ]),
           _: 3
         }, 8, ["class", "title", "style"]))
-      ], 64)) : k("", !0);
+      ], 64)) : D("", !0);
     };
   }
-}, re = ["placeholder"], ie = {
+}, le = ["placeholder"], re = {
   __name: "AutoSearch",
   props: {
     autoSearch: Object,
-    runSearch: Function
-  },
-  setup(e) {
-    return (t, n) => F((a(), l("input", {
-      type: "text",
-      "onUpdate:modelValue": n[0] || (n[0] = (o) => e.autoSearch.value = o),
-      onInput: n[1] || (n[1] = (o) => e.runSearch(e.autoSearch)),
-      class: g(e.autoSearch.class),
-      placeholder: e.autoSearch.placeholder ? e.autoSearch.placeholder : "Search"
-    }, null, 42, re)), [
-      [Q, e.autoSearch.value]
-    ]);
-  }
-}, oe = { class: "col-12" }, ce = { class: "pagination float-left" }, de = {
-  key: 1,
-  class: "page-link",
-  href: "javascript:;"
-}, se = ["onClick"], ue = {
-  key: 1,
-  class: "page-link",
-  href: "javascript:;"
-}, fe = {
-  __name: "Pagination",
-  props: {
-    searchData: Array,
+    runSearch: Function,
     preHandler: Object
   },
   setup(e) {
-    const t = e, n = _(), o = ee(), i = (f, m, v) => {
-      if (f <= v)
+    return (a, i) => P((t(), r("input", {
+      type: "text",
+      "onUpdate:modelValue": i[0] || (i[0] = (l) => e.preHandler.autoSearch.value = l),
+      onInput: i[1] || (i[1] = (l) => e.runSearch()),
+      class: m(e.autoSearch.class),
+      placeholder: e.autoSearch.placeholder ? e.autoSearch.placeholder : "Search"
+    }, null, 42, le)), [
+      [Q, e.preHandler.autoSearch.value]
+    ]);
+  }
+}, oe = { class: "col-12" }, ie = { class: "pagination float-left" }, se = {
+  key: 1,
+  class: "page-link",
+  href: "javascript:;"
+}, ce = ["onClick"], ue = {
+  key: 1,
+  class: "page-link",
+  href: "javascript:;"
+}, de = {
+  __name: "Pagination",
+  props: {
+    preHandler: Object
+  },
+  setup(e) {
+    const a = e, i = Z(), l = _(), s = (n, o, u) => {
+      if (n <= u)
         return [];
-      var w, b = Math.ceil(f / v), C = Math.min(10, b);
-      if (m > b)
-        m = b, w = b - C;
+      var p, b = Math.ceil(n / u), v = Math.min(10, b);
+      if (o > b)
+        o = b, p = b - v;
       else {
-        var A = Math.ceil(C / 2);
-        w = m + A > b ? b + 1 - C : A + 1 > m ? 1 : m - A;
+        var w = Math.ceil(v / 2);
+        p = o + w > b ? b + 1 - v : w + 1 > o ? 1 : o - w;
       }
-      w = Math.max(1, w);
-      var u = Array.apply(null, new Array(C)).map(function(D, V) {
-        return w + V++;
+      p = Math.max(1, p);
+      var $ = Array.apply(null, new Array(v)).map(function(h, f) {
+        return p + f++;
       });
-      return u.indexOf(1) === -1 && (u.shift(), u.unshift(1)), u.indexOf(b) === -1 && u.push(b), u;
-    }, r = async (f) => {
-      if (t.preHandler.dynamic) {
-        if (typeof t.preHandler.tableCahngePage == "function") {
-          let m = JSON.parse(JSON.stringify(n.query));
-          m.page = f, await o.push({ name: n.name, query: m }), n.query.page = f, t.preHandler.tableCahngePage(f, n.query);
+      return $.indexOf(1) === -1 && ($.shift(), $.unshift(1)), $.indexOf(b) === -1 && $.push(b), $;
+    }, g = async (n) => {
+      if (a.preHandler.dynamic) {
+        if (typeof a.preHandler.tableCahngePage == "function") {
+          let o = JSON.parse(JSON.stringify(i.query));
+          o.page = n, await l.push({ name: i.name, query: o }), i.query.page = n, a.preHandler.pagination.page = n, a.preHandler.tableCahngePage(n, i.query);
         }
       } else
-        s.value.page = f;
-    }, s = P(() => t.preHandler.pagination), c = P(() => {
-      const f = t.preHandler.dynamic ? s.value.total : t.searchData.length;
-      return i(f, s.value.page, s.value.pageSize);
-    });
-    return (f, m) => h(c).length > 0 ? (a(), l("div", {
+        a.preHandler.pagination.page = n, a.preHandler.tableCahngePage(n, i.query);
+    }, d = z(() => s(a.preHandler.pagination.total, a.preHandler.pagination.page, a.preHandler.pagination.pageSize));
+    return (n, o) => C(d).length > 0 ? (t(), r("div", {
       key: 0,
-      class: g(["row mt-2", { disabledbutton: t.preHandler.loader }])
+      class: m(["row mt-2", { disabledbutton: a.preHandler.loader }])
     }, [
-      H("div", oe, [
-        H("ul", ce, [
-          H("li", {
-            class: g(["page-item", { disabled: h(s).page == 1 }])
+      x("div", oe, [
+        x("ul", ie, [
+          x("li", {
+            class: m(["page-item", { disabled: e.preHandler.pagination.page == 1 }])
           }, [
-            h(s).page > 1 ? (a(), l("a", {
+            e.preHandler.pagination.page > 1 ? (t(), r("a", {
               key: 0,
               class: "page-link",
               href: "javascript:;",
-              onClick: m[0] || (m[0] = (v) => r(parseInt(h(s).page) - 1))
-            }, "prev")) : (a(), l("a", de, "Prev"))
+              onClick: o[0] || (o[0] = (u) => g(parseInt(e.preHandler.pagination.page) - 1))
+            }, "prev")) : (t(), r("a", se, "Prev"))
           ], 2),
-          (a(!0), l(y, null, O(h(c), (v) => (a(), l("li", {
-            class: g(["page-item", { active: h(s).page == v }]),
-            key: v
+          (t(!0), r(y, null, T(C(d), (u) => (t(), r("li", {
+            class: m(["page-item", { active: e.preHandler.pagination.page == u }]),
+            key: u
           }, [
-            H("a", {
+            x("a", {
               class: "page-link",
               href: "javascript:;",
-              onClick: (w) => r(v)
-            }, x(v), 9, se)
+              onClick: (p) => g(u)
+            }, j(u), 9, ce)
           ], 2))), 128)),
-          h(c).length > 0 ? (a(), l("li", {
+          C(d).length > 0 ? (t(), r("li", {
             key: 0,
-            class: g(["page-item", { disabled: h(s).page >= h(c).length }])
+            class: m(["page-item", { disabled: e.preHandler.pagination.page >= C(d).length }])
           }, [
-            h(s).page < h(c).length ? (a(), l("a", {
+            e.preHandler.pagination.page < C(d).length ? (t(), r("a", {
               key: 0,
               class: "page-link",
               href: "javascript:;",
-              onClick: m[1] || (m[1] = (v) => r(parseInt(h(s).page) + 1))
-            }, " Next ")) : (a(), l("a", ue, "Next"))
-          ], 2)) : k("", !0)
+              onClick: o[1] || (o[1] = (u) => g(parseInt(e.preHandler.pagination.page) + 1))
+            }, " Next ")) : (t(), r("a", ue, "Next"))
+          ], 2)) : D("", !0)
         ])
       ])
-    ], 2)) : k("", !0);
+    ], 2)) : D("", !0);
   }
-}, De = ["innerHTML"], ye = ["innerHTML"], me = {
-  __name: "HeaderTable",
+}, fe = ["for"], De = ["tabindex", "type", "placeholder", "maxlength", "disabled", "required", "id", "readonly"], ge = ["innerHTML"], ye = {
+  key: 3,
+  class: "text-sm text-red-500 pl-[3px]"
+}, me = {
+  __name: "InputTag",
   props: {
-    sortingData: Array,
-    filedData: Object,
+    options: {
+      type: Object,
+      default: {}
+    }
+  },
+  setup(e) {
+    const a = e, i = N(!1), l = A({
+      className: "",
+      isControlData: () => {
+      },
+      onKeyPress: () => !0,
+      type: "text",
+      placeholder: "",
+      group: !1,
+      groupText: "Se\xE7",
+      groupClass: "",
+      changeClick: () => !0,
+      maxlength: 255,
+      disabled: !1,
+      required: !1,
+      readonly: !1,
+      tabindex: 1,
+      onKeyup: () => {
+      },
+      label: "",
+      labelClass: ""
+    }), s = () => {
+      for (const g in l)
+        if (Object.hasOwnProperty.call(a.options, g)) {
+          const d = a.options[g];
+          l[g] = d;
+        }
+      i.value = !0;
+    };
+    return B(() => {
+      i.value = !1, s();
+    }), (g, d) => (t(), r(y, null, [
+      l.label ? (t(), r("label", {
+        key: 0,
+        for: e.options.field,
+        class: m(["ship-form-label", l.labelClass])
+      }, j(l.label), 11, fe)) : D("", !0),
+      i.value ? P((t(), r("input", {
+        key: 1,
+        onKeyup: d[0] || (d[0] = (...n) => l.onKeyup && l.onKeyup(...n)),
+        tabindex: l.tabindex,
+        autocomplete: "off",
+        type: l.type,
+        "onUpdate:modelValue": d[1] || (d[1] = (n) => e.options.element[e.options.field] = n),
+        onKeypress: d[2] || (d[2] = (...n) => l.onKeyPress && l.onKeyPress(...n)),
+        onChange: d[3] || (d[3] = (n) => l.isControlData(e.options.element, e.options.element[e.options.field])),
+        class: m([
+          l.className,
+          e.options.element.error && e.options.element.error[e.options.field] ? "border-red-400" : ""
+        ]),
+        placeholder: l.placeholder,
+        maxlength: l.maxlength,
+        disabled: l.disabled,
+        required: l.required,
+        id: e.options.field,
+        readonly: l.readonly
+      }, null, 42, De)), [
+        [W, e.options.element[e.options.field]]
+      ]) : D("", !0),
+      l.group ? (t(), r("div", {
+        key: 2,
+        class: m(["h-100", l.groupClass]),
+        innerHTML: l.groupText,
+        onClick: d[4] || (d[4] = (n) => l.changeClick(l.field))
+      }, null, 10, ge)) : D("", !0),
+      e.options.element.error && l.element.error[e.options.field] ? (t(), r("span", ye, j(e.options.element.error[e.options.field]), 1)) : D("", !0)
+    ], 64));
+  }
+}, he = ["disabled", "placeholder"], pe = ["value", "hidden"], ke = ["value", "disabled", "innerHTML"], be = {
+  key: 0,
+  class: "text-sm text-red-500 pl-[3px]"
+}, He = {
+  __name: "SelectTag",
+  props: {
+    options: {
+      type: Object,
+      default: {}
+    }
+  },
+  setup(e) {
+    const a = e, i = N(!1), l = (d, n) => typeof s.changNames == "function" ? s.changNames(a.options.element, n) : n[s.vv], s = A({
+      className: "",
+      first: null,
+      onChange: () => {
+      },
+      placeholder: "",
+      changNames: null,
+      vk: "v",
+      vv: "t",
+      disabled: !1
+    }), g = () => {
+      for (const d in a.options)
+        if (Object.hasOwnProperty.call(s, d)) {
+          const n = a.options[d];
+          s[d] = n;
+        }
+      i.value = !0;
+    };
+    return B(() => {
+      i.value = !1, g();
+    }), (d, n) => (t(), r(y, null, [
+      P(x("select", {
+        disabled: s.disabled,
+        onChange: n[0] || (n[0] = (o) => s.onChange()),
+        "onUpdate:modelValue": n[1] || (n[1] = (o) => a.options.element[a.options.field] = o),
+        placeholder: s.placeholder
+      }, [
+        s.first ? (t(), r("option", {
+          key: 0,
+          value: s.first[s.vk],
+          hidden: s.first.h
+        }, j(s.first[s.vv]), 9, pe)) : D("", !0),
+        (t(!0), r(y, null, T(a.options.list, (o) => (t(), r("option", {
+          key: o,
+          value: o[s.vk],
+          disabled: o.d,
+          innerHTML: l(a.options.element, o)
+        }, null, 8, ke))), 128))
+      ], 40, he), [
+        [X, a.options.element[a.options.field]]
+      ]),
+      a.options.element.error && a.options.element.error[a.options.field] ? (t(), r("span", be, j(a.options.element.error[a.options.field]), 1)) : D("", !0)
+    ], 64));
+  }
+}, ve = ["innerHTML"], Se = ["innerHTML"], we = {
+  __name: "AutoTableHeader",
+  props: {
+    tableData: Object,
     preHandler: Object,
     searchData: Array
   },
   setup(e) {
-    const t = e, n = B(!1);
-    E(n, (c, f) => {
-      t.sortingData.forEach((m) => {
-        m.select = c;
+    const a = e, i = N(!1);
+    V(i, (n, o) => {
+      a.searchData.forEach((u) => {
+        u.select = n;
       });
     });
-    const o = () => {
-      var c = "";
-      t.preHandler.sorting.t === 1 ? c = t.preHandler.sorting.r ? 'a["' + t.preHandler.sorting.n + '"].localeCompare(b["' + t.preHandler.sorting.n + '"])' : 'b["' + t.preHandler.sorting.n + '"].localeCompare(a["' + t.preHandler.sorting.n + '"])' : t.preHandler.sorting.t === 2 && (c = t.preHandler.sorting.r ? 'a["' + t.preHandler.sorting.n + '"] - b["' + t.preHandler.sorting.n + '"]' : 'b["' + t.preHandler.sorting.n + '"] - a["' + t.preHandler.sorting.n + '"]');
-      let f = "return " + c;
-      return new Function("a,b", f);
-    }, i = (c) => t.preHandler.sorting.n === c ? t.preHandler.sorting.r ? "&#8650;" : "&#8648;" : "&#8645;", r = (c) => c && c.caseColon ? c.caseColon(c) : !0, s = (c) => {
-      if (c.sort) {
-        t.preHandler.sorting.r = t.preHandler.sorting.n === c.sort.n && !t.preHandler.sorting.r, t.preHandler.sorting.n = c.sort.n, t.preHandler.sorting.t = c.sort.t;
-        const f = o();
-        t.searchData.sort(f);
+    const l = () => {
+      var n = "";
+      a.preHandler.sorting.t === 1 ? n = a.preHandler.sorting.r ? 'a["' + a.preHandler.sorting.n + '"].localeCompare(b["' + a.preHandler.sorting.n + '"])' : 'b["' + a.preHandler.sorting.n + '"].localeCompare(a["' + a.preHandler.sorting.n + '"])' : a.preHandler.sorting.t === 2 && (n = a.preHandler.sorting.r ? 'a["' + a.preHandler.sorting.n + '"] - b["' + a.preHandler.sorting.n + '"]' : 'b["' + a.preHandler.sorting.n + '"] - a["' + a.preHandler.sorting.n + '"]');
+      let o = "return " + n;
+      return new Function("a,b", o);
+    }, s = (n) => a.preHandler.sorting.n === n ? a.preHandler.sorting.r ? "&#8650;" : "&#8648;" : "&#8645;", g = (n) => n && n.caseColon ? n.caseColon(n) : !0, d = (n) => {
+      if (n.sort) {
+        a.preHandler.sorting.r = a.preHandler.sorting.n === n.sort.n && !a.preHandler.sorting.r, a.preHandler.sorting.n = n.sort.n, a.preHandler.sorting.t = n.sort.t;
+        const o = l();
+        a.searchData.sort(o);
       }
     };
-    return (c, f) => r(e.filedData) ? (a(), l("th", {
-      key: 0,
-      class: g(e.filedData.head.tclass ? e.filedData.head.tclass : ""),
-      style: N(e.filedData.head.style),
-      onClick: f[1] || (f[1] = (m) => s(e.filedData.head))
-    }, [
-      e.filedData.head.checkbox ? F((a(), l("input", {
-        key: 0,
-        type: "checkbox",
-        class: g(e.filedData.head.class),
-        "onUpdate:modelValue": f[0] || (f[0] = (m) => n.value = m)
-      }, null, 2)), [
-        [U, n.value]
-      ]) : (a(), l("span", {
-        key: 1,
-        class: g(e.filedData.head.class),
-        innerHTML: e.filedData.head.title
-      }, null, 10, De)),
-      e.filedData.head.sort ? (a(), l("span", {
-        key: 2,
-        innerHTML: i(e.filedData.head.sort.n)
-      }, null, 8, ye)) : k("", !0)
-    ], 6)) : k("", !0);
+    return (n, o) => (t(), c(k(e.tableData.lineTag ? e.tableData.lineTag : "tr"), null, {
+      default: H(() => [
+        (t(!0), r(y, null, T(e.tableData.data, (u) => (t(), r(y, {
+          key: u.name
+        }, [
+          g(u) ? (t(), c(k(e.tableData.columnTag ? e.tableData.columnTag : "td"), {
+            key: 0,
+            class: m(u.tclass ? u.tclass : ""),
+            style: M(u.style),
+            onClick: (p) => d(u)
+          }, {
+            default: H(() => [
+              u.checkbox ? P((t(), r("input", {
+                key: 0,
+                type: "checkbox",
+                class: m(u.class),
+                "onUpdate:modelValue": o[0] || (o[0] = (p) => i.value = p)
+              }, null, 2)), [
+                [U, i.value]
+              ]) : (t(), r("span", {
+                key: 1,
+                class: m(u.class),
+                innerHTML: u.title
+              }, null, 10, ve)),
+              u.sort ? (t(), r("span", {
+                key: 2,
+                innerHTML: s(u.sort.n)
+              }, null, 8, Se)) : D("", !0)
+            ]),
+            _: 2
+          }, 1032, ["class", "style", "onClick"])) : D("", !0)
+        ], 64))), 128))
+      ]),
+      _: 1
+    }));
   }
-}, ge = {
+}, Ce = {
   __name: "RowTable",
   props: {
     rowData: Object,
     filedData: Object
   },
   setup(e) {
-    const t = e, n = () => t.filedData.caseColon ? t.filedData.caseColon(t.rowData, t.filedData) : !0;
-    return (o, i) => n() ? (a(), l("td", {
+    const a = e, i = () => a.filedData.caseColon ? a.filedData.caseColon(a.rowData, a.filedData) : !0;
+    return (l, s) => i() ? (t(), r("td", {
       key: 0,
-      class: g(e.filedData.body && e.filedData.body.tclass ? e.filedData.body.tclass : "")
+      class: m(e.filedData && e.filedData.tclass ? e.filedData.tclass : "")
     }, [
-      e.filedData.body.list ? (a(!0), l(y, { key: 0 }, O(e.filedData.body.list, (r, s) => (a(), d(L, {
-        key: s + "-body",
-        filedData: r,
+      e.filedData.list ? (t(!0), r(y, { key: 0 }, T(e.filedData.list, (g, d) => (t(), c(L, {
+        key: d + "-body",
+        filedData: g,
         rowData: e.rowData
-      }, null, 8, ["filedData", "rowData"]))), 128)) : (a(), d(L, {
+      }, null, 8, ["filedData", "rowData"]))), 128)) : (t(), c(L, {
         key: 1,
-        filedData: e.filedData.body,
+        filedData: e.filedData,
         rowData: e.rowData
       }, null, 8, ["filedData", "rowData"]))
-    ], 2)) : k("", !0);
+    ], 2)) : D("", !0);
   }
-}, he = { key: 0 }, ke = { key: 0 }, ve = ["colspan"], be = /* @__PURE__ */ H("h6", null, "Data Not Found", -1), He = [
-  be
-], Se = { key: 0 }, we = ["colspan"], Ce = { key: 1 }, $e = ["colspan"], je = /* @__PURE__ */ H("h5", null, "Loader...", -1), Oe = [
-  je
-], Te = {
-  __name: "AutoTable",
+}, Te = {
+  __name: "AutoTableBody",
   props: {
-    tableData: Array,
+    tableData: Object,
     preHandler: Object,
     searchData: Array
   },
   setup(e) {
-    const t = e, n = P(() => {
-      if (t.preHandler.dynamic)
-        return t.searchData;
-      {
-        const o = t.searchData.length, i = t.preHandler.pagination, r = Math.ceil(o / i.pageSize);
-        i.page > r && r > 0 && (i.page = r);
-        const s = (i.page - 1) * i.pageSize;
-        return t.searchData.slice(s, s + i.pageSize);
-      }
-    });
-    return (o, i) => (a(), l("table", null, [
-      H("thead", null, [
-        H("tr", null, [
-          (a(!0), l(y, null, O(e.tableData, (r) => (a(), d(me, {
-            key: r.head.name,
-            sortingData: h(n),
-            filedData: r,
-            preHandler: e.preHandler,
-            searchData: e.searchData
-          }, null, 8, ["sortingData", "filedData", "preHandler", "searchData"]))), 128))
-        ])
-      ]),
-      e.preHandler.loader ? (a(), l("tbody", Ce, [
-        H("tr", null, [
-          H("td", {
-            colspan: e.tableData.length
-          }, Oe, 8, $e)
-        ])
-      ])) : (a(), l("tbody", he, [
-        h(n).length === 0 ? (a(), l("tr", ke, [
-          H("td", {
-            colspan: e.tableData.length
-          }, He, 8, ve)
-        ])) : (a(!0), l(y, { key: 1 }, O(h(n), (r) => (a(), l(y, { key: r }, [
-          H("tr", null, [
-            (a(!0), l(y, null, O(e.tableData, (s) => (a(), d(ge, {
-              key: s.head.name,
-              rowData: r,
-              filedData: s
-            }, null, 8, ["rowData", "filedData"]))), 128))
+    return (a, i) => (t(!0), r(y, null, T(e.searchData, (l) => (t(), c(k(e.tableData.lineTag ? e.tableData.lineTag : "tr"), { key: l }, {
+      default: H(() => [
+        (t(!0), r(y, null, T(e.tableData.data, (s) => (t(), c(Ce, {
+          key: s,
+          rowData: l,
+          filedData: s
+        }, null, 8, ["rowData", "filedData"]))), 128)),
+        l.open ? (t(), c(k(a.filedData.lineTag ? a.filedData.lineTag : "tr"), { key: 0 }, {
+          default: H(() => [
+            a.filedData.lineTag === "tr" || !a.filedData.lineTag ? (t(), c(k(a.filedData.colonTag ? a.filedData.colonTag : "td"), { key: 0 }, {
+              default: H(() => [
+                (t(), c(k(l.component), { pageData: l }, null, 8, ["pageData"]))
+              ]),
+              _: 2
+            }, 1024)) : (t(), c(k(a.filedData.colonTag ? a.filedData.colonTag : "div"), { key: 1 }, {
+              default: H(() => [
+                (t(), c(k(l.component), { pageData: l }, null, 8, ["pageData"]))
+              ]),
+              _: 2
+            }, 1024))
           ]),
-          r.open ? (a(), l("tr", Se, [
-            H("td", {
-              colspan: e.tableData.length
-            }, [
-              (a(), d($(r.component), { pageData: r }, null, 8, ["pageData"]))
-            ], 8, we)
-          ])) : k("", !0)
-        ], 64))), 128))
-      ]))
-    ]));
-  }
-}, xe = ["tabindex", "autocomplete", "type", "placeholder", "maxlength", "disabled", "required", "id", "readonly"], Ne = {
-  key: 0,
-  class: "text-error-form"
-}, Me = {
-  __name: "InputTag",
-  props: {
-    field: String,
-    element: Object,
-    className: {
-      type: String,
-      default: ""
-    },
-    isControlData: {
-      type: Function,
-      default: () => {
-      }
-    },
-    onKeyPress: {
-      type: Function,
-      default: () => !0
-    },
-    type: {
-      type: String,
-      default: "text"
-    },
-    placeholder: {
-      type: String,
-      default: ""
-    },
-    maxlength: {
-      default: 255,
-      type: Number
-    },
-    disabled: {
-      default: !1,
-      type: Boolean
-    },
-    required: {
-      default: !1,
-      type: Boolean
-    },
-    readonly: {
-      default: !1,
-      type: Boolean
-    },
-    tabindex: {
-      type: Number
-    },
-    onKeyup: {
-      type: Function,
-      default: () => {
-      }
-    },
-    autocomplete: {
-      type: String,
-      default: "off"
-    }
-  },
-  setup(e) {
-    return (t, n) => (a(), l(y, null, [
-      F(H("input", {
-        onKeyup: n[0] || (n[0] = (...o) => e.onKeyup && e.onKeyup(...o)),
-        tabindex: e.tabindex,
-        autocomplete: e.autocomplete,
-        type: e.type,
-        "onUpdate:modelValue": n[1] || (n[1] = (o) => e.element[e.field] = o),
-        onKeypress: n[2] || (n[2] = (...o) => e.onKeyPress && e.onKeyPress(...o)),
-        onChange: n[3] || (n[3] = (o) => e.isControlData(e.element, e.element[e.field])),
-        class: g([
-          e.className,
-          e.element.error && e.element.error[e.field] ? "tag-error-form" : ""
-        ]),
-        placeholder: e.placeholder,
-        maxlength: e.maxlength,
-        disabled: e.disabled,
-        required: e.required,
-        id: e.field,
-        readonly: e.readonly
-      }, null, 42, xe), [
-        [W, e.element[e.field]]
+          _: 2
+        }, 1024)) : D("", !0)
       ]),
-      j(t.$slots, "default"),
-      e.element.error && e.element.error[e.field] ? (a(), l("span", Ne, x(e.element.error[e.field]), 1)) : k("", !0)
-    ], 64));
+      _: 2
+    }, 1024))), 128));
   }
-}, Le = ["placeholder"], Ae = ["value", "hidden"], Fe = ["value", "disabled", "innerHTML"], Pe = {
-  key: 0,
-  class: "text-error-form"
-}, Ve = {
-  __name: "SelectTag",
-  props: {
-    field: String | Number,
-    element: Object,
-    list: Array,
-    className: {
-      type: String,
-      default: ""
-    },
-    first: {
-      type: Object,
-      default: null
-    },
-    onChange: {
-      type: Function,
-      default: () => {
-      }
-    },
-    placeholder: {
-      type: String,
-      default: ""
-    },
-    changNames: {
-      type: Function,
-      default: null
-    },
-    vk: {
-      type: String,
-      default: "v"
-    },
-    vv: {
-      type: String,
-      default: "t"
-    }
-  },
-  setup(e) {
-    const t = e, n = (o, i) => typeof t.changNames == "function" ? t.changNames(o, i) : i[t.vv];
-    return (o, i) => (a(), l(y, null, [
-      F(H("select", {
-        onChange: i[0] || (i[0] = (r) => e.onChange()),
-        class: g([
-          e.className,
-          { "tag-error-form": e.element.error && e.element.error[e.field] }
-        ]),
-        "onUpdate:modelValue": i[1] || (i[1] = (r) => e.element[e.field] = r),
-        placeholder: e.placeholder
-      }, [
-        e.first ? (a(), l("option", {
-          key: 0,
-          value: e.first[e.vk],
-          hidden: e.first.h
-        }, x(e.first[e.vv]), 9, Ae)) : k("", !0),
-        (a(!0), l(y, null, O(e.list, (r) => (a(), l("option", {
-          key: r,
-          value: r[e.vk],
-          disabled: r.d,
-          innerHTML: n(e.element, r)
-        }, null, 8, Fe))), 128))
-      ], 42, Le), [
-        [X, e.element[e.field]]
-      ]),
-      j(o.$slots, "default"),
-      e.element.error && e.element.error[e.field] ? (a(), l("span", Pe, x(e.element.error[e.field]), 1)) : k("", !0)
-    ], 64));
-  }
-}, qe = {
+}, $e = {
   __name: "SectionBody",
   props: {
     column: Object,
@@ -560,77 +514,73 @@ const ae = ["href", "title"], le = ["src"], ne = ["title"], L = {
     runSearch: Function
   },
   setup(e) {
-    const t = e, n = () => Object.prototype.hasOwnProperty.call(t.column, "class") ? typeof t.column.class == "function" ? t.column.class(t.rowData) : t.column.class : "";
-    return (o, i) => e.column.type === "comp" ? (a(), d($(e.column.tag ? e.column.tag : "div"), {
+    const a = e, i = () => Object.prototype.hasOwnProperty.call(a.column, "class") ? typeof a.column.class == "function" ? a.column.class(a.rowData) : a.column.class : "";
+    return (l, s) => e.column.type === "comp" ? (t(), c(k(e.column.tag ? e.column.tag : "div"), {
       key: 0,
-      class: g(n())
+      class: m(i())
     }, {
-      default: T(() => [
-        e.column.name === "table" ? (a(), d(Te, {
+      default: H(() => [
+        e.column.name === "tableHead" ? (t(), c(we, {
           key: 0,
-          tableData: e.column.data,
-          searchData: e.searchData,
-          preHandler: e.preHandler,
-          opts: e.column.opts,
-          class: g(n())
-        }, null, 8, ["tableData", "searchData", "preHandler", "opts", "class"])) : e.column.name === "pagination" ? (a(), d(fe, {
-          key: 1,
+          tableData: e.column,
           searchData: e.searchData,
           preHandler: e.preHandler
-        }, null, 8, ["searchData", "preHandler"])) : e.column.name === "autosearch" ? (a(), d(ie, {
+        }, null, 8, ["tableData", "searchData", "preHandler"])) : D("", !0),
+        e.column.name === "tableBody" ? (t(), c(Te, {
+          key: 1,
+          tableData: e.column,
+          searchData: e.searchData,
+          preHandler: e.preHandler
+        }, null, 8, ["tableData", "searchData", "preHandler"])) : e.column.name === "pagination" ? (t(), c(de, {
           key: 2,
-          autoSearch: e.column.data,
-          runSearch: e.runSearch
-        }, null, 8, ["autoSearch", "runSearch"])) : (a(), d($(e.column.name), {
+          searchData: e.searchData,
+          preHandler: e.preHandler
+        }, null, 8, ["searchData", "preHandler"])) : e.column.name === "autosearch" ? (t(), c(re, {
           key: 3,
+          autoSearch: e.column.data,
+          runSearch: e.runSearch,
+          preHandler: e.preHandler
+        }, null, 8, ["autoSearch", "runSearch", "preHandler"])) : (t(), c(k(e.column.name), {
+          key: 4,
           compData: e.column.data
         }, null, 8, ["compData"])),
-        e.column.list ? (a(), d(K, {
-          key: 4,
+        e.column.list ? (t(), c(F, {
+          key: 5,
           columns: e.column.list,
           searchData: e.searchData,
           preHandler: e.preHandler,
           runSearch: e.runSearch
-        }, null, 8, ["columns", "searchData", "preHandler", "runSearch"])) : k("", !0)
+        }, null, 8, ["columns", "searchData", "preHandler", "runSearch"])) : D("", !0)
       ]),
       _: 1
-    }, 8, ["class"])) : e.column.type === "select" ? (a(), d(Ve, {
+    }, 8, ["class"])) : e.column.type === "input" ? (t(), c(me, {
       key: 1,
-      field: e.column.field,
-      element: e.column.data,
-      list: e.column.options,
-      vk: e.column.vk ? e.column.vk : "v",
-      first: e.column.first,
-      vv: e.column.vv ? e.column.vv : "t",
-      className: n()
-    }, null, 8, ["field", "element", "list", "vk", "first", "vv", "className"])) : e.column.type === "input" ? (a(), d(Me, {
+      options: e.column.data
+    }, null, 8, ["options"])) : e.column.type === "select" ? (t(), c(He, {
       key: 2,
-      field: e.column.field,
-      element: e.column.data,
-      className: n(),
-      readonly: e.column.readonly
-    }, null, 8, ["field", "element", "className", "readonly"])) : e.column.type === "dropdown" ? (a(), d(L, {
+      options: e.column.data
+    }, null, 8, ["options"])) : e.column.type === "dropdown" ? (t(), c(L, {
       key: 3,
       filedData: e.column,
       rowData: {}
-    }, null, 8, ["filedData"])) : (a(), d(L, {
+    }, null, 8, ["filedData"])) : (t(), c(L, {
       key: 4,
       filedData: e.column,
       rowData: {}
     }, {
-      default: T(() => [
-        e.column.list ? (a(), d(K, {
+      default: H(() => [
+        e.column.list ? (t(), c(F, {
           key: 0,
           columns: e.column.list,
           searchData: e.searchData,
           preHandler: e.preHandler,
           runSearch: e.runSearch
-        }, null, 8, ["columns", "searchData", "preHandler", "runSearch"])) : k("", !0)
+        }, null, 8, ["columns", "searchData", "preHandler", "runSearch"])) : D("", !0)
       ]),
       _: 1
     }, 8, ["filedData"]));
   }
-}, K = {
+}, F = {
   __name: "Section",
   props: {
     columns: Array,
@@ -639,21 +589,21 @@ const ae = ["href", "title"], le = ["src"], ne = ["title"], L = {
     runSearch: Function
   },
   setup(e) {
-    const t = (n) => typeof n.caseColon == "function" ? n.caseColon() : !0;
-    return (n, o) => (a(!0), l(y, null, O(e.columns, (i) => (a(), l(y, { key: i }, [
-      t(i) ? (a(), d(qe, {
+    const a = (i) => typeof i.caseColon == "function" ? i.caseColon() : !0;
+    return (i, l) => (t(!0), r(y, null, T(e.columns, (s) => (t(), r(y, { key: s }, [
+      a(s) ? (t(), c($e, {
         key: 0,
-        column: i,
+        column: s,
         preHandler: e.preHandler,
         searchData: e.searchData,
         runSearch: e.runSearch
-      }, null, 8, ["column", "preHandler", "searchData", "runSearch"])) : k("", !0)
+      }, null, 8, ["column", "preHandler", "searchData", "runSearch"])) : D("", !0)
     ], 64))), 128));
   }
-}, Ke = {
+}, je = {
   key: 1,
   class: "loader"
-}, Ee = {
+}, Me = {
   __name: "index",
   props: {
     pageSetting: Object,
@@ -663,27 +613,44 @@ const ae = ["href", "title"], le = ["src"], ne = ["title"], L = {
     }
   },
   setup(e) {
-    const t = e, n = Z([]), o = (r) => r.replace(/Ğ/g, "\u011F").replace(/Ü/g, "\xFC").replace(/Ş/g, "\u015F").replace(/I/g, "\u0131").replace(/İ/g, "i").replace(/Ö/g, "\xF6").replace(/Ç/g, "\xE7").toLowerCase(), i = (r = null) => {
-      let s = r && r.value.length > 0 ? t.allData.filter((c) => {
-        let f = [];
-        return r.alans.forEach((v) => {
-          f.push(o(c[v].toString()));
-        }), f.join(" ").indexOf(o(r.value)) !== -1;
-      }) : t.allData;
-      n.splice(0, n.length), n.push(...s);
+    const a = e, i = A([]), l = A([]), s = (n) => n.replace(/Ğ/g, "\u011F").replace(/Ü/g, "\xFC").replace(/Ş/g, "\u015F").replace(/I/g, "\u0131").replace(/İ/g, "i").replace(/Ö/g, "\xF6").replace(/Ç/g, "\xE7").toLowerCase();
+    V(a.allData, () => {
+      g();
+    }), V(a.pageSetting.preHandler.pagination, () => {
+      a.pageSetting.preHandler.dynamic || g();
+    });
+    const g = () => {
+      let n = a.pageSetting.preHandler.autoSearch && a.pageSetting.preHandler.autoSearch.value.length > 0 ? a.allData.filter((o) => {
+        let u = [];
+        return a.pageSetting.preHandler.autoSearch.alans.forEach((b) => {
+          u.push(s(o[b].toString()));
+        }), u.join(" ").indexOf(s(a.pageSetting.preHandler.autoSearch.value)) !== -1;
+      }) : a.allData;
+      i.splice(0, i.length), i.push(...n), d();
+    }, d = () => {
+      if (l.splice(0, l.length), a.pageSetting.preHandler.dynamic)
+        l.push(...i);
+      else {
+        const n = i.length, o = a.pageSetting.preHandler.pagination;
+        o.total = n;
+        const u = Math.ceil(n / o.pageSize);
+        o.page > u && u > 0 && (o.page = u);
+        const p = (o.page - 1) * o.pageSize;
+        l.push(...i.slice(p, p + o.pageSize));
+      }
     };
-    return p(() => {
-      i();
-    }), (r, s) => e.pageSetting.loader ? (a(), l("div", Ke, "Loader...")) : (a(), d(K, {
+    return B(() => {
+      g();
+    }), (n, o) => e.pageSetting.loader ? (t(), r("div", je, "Loader...")) : (t(), c(F, {
       key: 0,
       columns: e.pageSetting.pageData,
       preHandler: e.pageSetting.preHandler,
-      searchData: n,
-      runSearch: i
+      searchData: l,
+      runSearch: g
     }, null, 8, ["columns", "preHandler", "searchData"]));
   }
 };
-class Ue {
+class Le {
   constructor() {
     this.preHandler = {
       dynamic: !1,
@@ -693,6 +660,10 @@ class Ue {
         page: 1,
         pageSize: 20,
         total: 0
+      },
+      autoSearch: {
+        value: "",
+        alans: []
       },
       sorting: {
         n: "",
@@ -707,6 +678,6 @@ class Ue {
   }
 }
 export {
-  Ee as AutoPage,
-  Ue as createPageSetting
+  Me as AutoPage,
+  Le as createPageSetting
 };

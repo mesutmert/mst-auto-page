@@ -27,405 +27,133 @@ yarn add mst-auto-page
 <script setup>
 import { reactive } from 'vue'
 import { createPageSetting, AutoPage } from 'mst-auto-page'
+import mockData from '@/data/mockData.json'
 
-const allData = reactive([
+const allData = reactive(mockData)
+
+const headColumns = [
   {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Active'
+    name: 'select',
+    checkbox: true,
+    title: 'Select',
+    class: 'text-left',
+    style: 'min-width:50px'
   },
+
   {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
+    name: 'first_name',
+    title: 'Fisrt Name',
+    sort: { n: 'first_name', t: 1 }
   },
+
   {
-    select: false,
-    name: 'mesut Özcan 1',
-    status: 'Passive'
+    name: 'last_name',
+    title: 'Last Name',
+    sort: { n: 'last_name', t: 1 }
   },
+
   {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan2',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan 3',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
-  },
-  {
-    select: false,
-    name: 'mesut Özcan',
-    status: 'Passive'
+    name: 'status',
+    title: 'Status'
   }
-])
+]
 
-const columns = [
+const bodyColumns = [
   {
-    head: {
-      name: 'select',
-      checkbox: true,
-      title: 'Select',
-      class: 'text-left',
-      style: 'min-width:50px'
-    },
-    body: {
-      name: 'select',
-      tclass: 'text-left',
-      class: 'checkClass',
-      type: 'checkbox'
-    }
+    name: 'select',
+    tclass: 'text-left',
+    class: 'checkClass',
+    type: 'checkbox'
   },
 
   {
-    head: {
-      name: 'name',
-      title: 'Name'
-    },
-    body: {
-      tclass: 'text-left',
-      list: [{ name: 'name', class: 'flex justify-center' }]
-    }
+    tclass: 'text-left ',
+    class: 'd-flex',
+    list: [
+      {
+        name: 'first_name',
+        class: 'd-inline-flex justify-center',
+
+        callback: row => alert(row.first_name)
+      }
+    ]
   },
 
   {
-    head: {
-      name: 'status',
-      title: 'Status'
-    },
-    body: {
-      tclass: 'text-left',
-      list: [
-        {
-          name: 'status',
-          class: row =>
-            row.status === 'Active' ? 'btn btn-success' : 'btn btn-danger',
-          tag: 'button'
-        }
-      ]
-    }
+    tclass: 'text-left ',
+    class: 'd-flex',
+    list: [
+      {
+        name: 'last_name',
+        class: 'd-inline-flex justify-center'
+      }
+    ]
+  },
+
+  {
+    tclass: 'text-left',
+    list: [
+      {
+        name: 'status',
+        class: row =>
+          row.status === 'Active' ? 'btn btn-success' : 'btn btn-danger',
+        tag: 'button',
+        callback: row => console.log(row)
+      }
+    ]
   }
 ]
 const pageSetting = reactive(new createPageSetting())
 pageSetting.preHandler.dynamic = false
 pageSetting.preHandler.pagination.pageSize = 25
+pageSetting.preHandler.pagination.total = mockData.length
+pageSetting.preHandler.sorting.n = 'first_name'
+pageSetting.preHandler.autoSearch.alans = ['first_name', 'last_name']
+
 pageSetting.pageData = [
   {
-    class: 'card w-100',
+    class: 'row',
     list: [
       {
-        class: 'card-body',
+        class: 'col-12',
+        type: 'comp',
+        name: 'autosearch',
+        data: {
+          value: '',
+          class: 'form-control',
+          alans: ['first_name']
+        }
+      }
+    ]
+  },
+  {
+    tag: 'table',
+    list: [
+      {
+        tag: 'thead',
         list: [
           {
-            class: 'row',
-            list: [
-              {
-                type: 'comp',
-                class: 'col-md-4',
-                name: 'autosearch',
-                data: {
-                  alans: ['name'],
-                  value: '',
-                  class: 'form-control'
-                }
-              },
-              {
-                class: 'col-md-8 text-md-end',
-                list: [
-                  {
-                    name: 'Yeni Ekle',
-                    class: 'btn btn-success waves-effect waves-light'
-                  }
-                ]
-              }
-            ]
+            type: 'comp',
+            name: 'tableHead',
+            data: headColumns,
+    
+          }
+        ]
+      },
+      {
+        tag: 'tbody',
+        list: [
+          {
+            type: 'comp',
+            name: 'tableBody',
+            data: bodyColumns,
+       
           }
         ]
       }
     ]
   },
-  {
-    type: 'comp',
-    name: 'table',
-    data: columns,
-    class: 'table'
-  },
+
   {
     type: 'comp',
     name: 'pagination',
@@ -433,6 +161,7 @@ pageSetting.pageData = [
   }
 ]
 </script>
+
 
 
 ```
