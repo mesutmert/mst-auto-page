@@ -25,15 +25,32 @@ yarn add mst-auto-page
   <AutoPage :pageSetting="pageSetting" :allData="allData" />
 </template>
 <script setup>
-import { reactive } from 'vue'
+import { onMounted, reactive } from 'vue'
 import { createPageSetting, AutoPage } from 'mst-auto-page'
-import mockData from '@/data/mockData.json'
+import mockData from './mock_data.json'
 
-const allData = reactive(mockData)
+const allData = reactive(mockData) // reactive([]) if dynamic = true
+
+const setData = page => {
+  const ofset =
+    pageSetting.preHandler.pagination.pageSize * page -
+    pageSetting.preHandler.pagination.pageSize
+  const end = ofset + pageSetting.preHandler.pagination.pageSize
+  const nData = mockData.slice(ofset, end)
+  allData.splice(0, allData.length)
+  allData.push(...nData)
+  pageSetting.preHandler.loader = false
+}
+
+const changeRoute = (query, first) => {
+  const page = query.page ? parseInt(query.page) : 1
+
+  if (first) pageSetting.preHandler.pagination.page = page
+  setData(page)
+}
 
 const headColumns = [
   {
-    name: 'select',
     checkbox: true,
     title: 'Select',
     class: 'text-left',
@@ -41,34 +58,35 @@ const headColumns = [
   },
 
   {
-    name: 'first_name',
     title: 'Fisrt Name',
     sort: { n: 'first_name', t: 1 }
   },
 
   {
-    name: 'last_name',
     title: 'Last Name',
     sort: { n: 'last_name', t: 1 }
   },
 
   {
-    name: 'status',
     title: 'Status'
   }
 ]
 
 const bodyColumns = [
   {
-    name: 'select',
-    tclass: 'text-left',
-    class: 'checkClass',
-    type: 'checkbox'
+    tag: 'td',
+    class: '',
+    list: [
+      {
+        name: 'select',
+        class: 'checkClass',
+        type: 'checkbox'
+      }
+    ]
   },
-
   {
-    tclass: 'text-left ',
-    class: 'd-flex',
+    tag: 'td',
+
     list: [
       {
         name: 'first_name',
@@ -80,8 +98,7 @@ const bodyColumns = [
   },
 
   {
-    tclass: 'text-left ',
-    class: 'd-flex',
+    tag: 'td',
     list: [
       {
         name: 'last_name',
@@ -91,7 +108,7 @@ const bodyColumns = [
   },
 
   {
-    tclass: 'text-left',
+    tag: 'td',
     list: [
       {
         name: 'status',
@@ -109,6 +126,15 @@ pageSetting.preHandler.pagination.pageSize = 25
 pageSetting.preHandler.pagination.total = mockData.length
 pageSetting.preHandler.sorting.n = 'first_name'
 pageSetting.preHandler.autoSearch.alans = ['first_name', 'last_name']
+
+pageSetting.preHandler.tableCahngePage = (page, query) => {
+  pageSetting.preHandler.loader = true
+  // changeRoute(query) if dynamic = true
+}
+pageSetting.preHandler.tableChangePageSize = (pageSize, query) => {
+  pageSetting.preHandler.loader = true
+  // changeRoute(query) if dynamic = true
+}
 
 pageSetting.pageData = [
   {
@@ -136,7 +162,8 @@ pageSetting.pageData = [
             type: 'comp',
             name: 'tableHead',
             data: headColumns,
-    
+            class: 'table',
+            line: { tag: 'tr', class: '' }
           }
         ]
       },
@@ -144,10 +171,11 @@ pageSetting.pageData = [
         tag: 'tbody',
         list: [
           {
+            line: { tag: 'tr', class: '' },
             type: 'comp',
             name: 'tableBody',
             data: bodyColumns,
-       
+            class: 'table'
           }
         ]
       }
@@ -160,6 +188,10 @@ pageSetting.pageData = [
     data: {}
   }
 ]
+
+onMounted(() => {
+  // changeRoute(route.query, true) if dynamic = true
+})
 </script>
 
 
