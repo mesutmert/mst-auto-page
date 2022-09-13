@@ -1,549 +1,536 @@
-import { resolveComponent as z, openBlock as t, createElementBlock as r, Fragment as D, normalizeClass as y, normalizeStyle as j, createBlock as s, resolveDynamicComponent as k, createTextVNode as L, toDisplayString as v, createCommentVNode as h, renderSlot as S, createElementVNode as $, withDirectives as T, vModelCheckbox as P, withCtx as H, vModelText as q, computed as x, unref as M, renderList as C, ref as E, watch as A, reactive as F, onMounted as I } from "vue";
-import { useRoute as U, useRouter as R } from "vue-router";
-const J = ["href", "title"], K = ["src"], G = ["title"], Q = {
+import { resolveComponent as B, openBlock as a, createElementBlock as d, Fragment as g, mergeProps as H, createBlock as f, resolveDynamicComponent as b, createTextVNode as C, toDisplayString as j, createCommentVNode as m, renderSlot as p, createElementVNode as S, withDirectives as P, vModelCheckbox as x, withCtx as h, normalizeProps as M, normalizeClass as $, vModelText as I, computed as z, unref as L, renderList as O, ref as R, watch as A, guardReactiveProps as N, normalizeStyle as U, reactive as F, onMounted as J } from "vue";
+import { useRoute as G, useRouter as K } from "vue-router";
+const Q = ["href"], W = ["src"], X = {
   name: "column"
-}, W = /* @__PURE__ */ Object.assign(Q, {
+}, Y = /* @__PURE__ */ Object.assign(X, {
   props: {
     filedData: Object,
-    rowData: Object
+    rowData: {
+      type: Object,
+      default: {}
+    }
   },
-  setup(a) {
-    const e = a, u = (o, n) => n === 1 ? Object.prototype.toString.call(o) === "[object Object]" : n === 2 ? Object.prototype.toString.call(o) === "[object Array]" : n === 3 ? Object.prototype.toString.call(o) === "[object String]" : n === 4 ? Object.prototype.toString.call(o) === "[object Number]" : n === 5 ? Object.prototype.toString.call(o) === "[object Null]" : !1, d = (o, n) => u(o, 1) ? Object.prototype.hasOwnProperty.call(o, n) : !1, g = () => {
-      typeof e.filedData.callback == "function" && e.filedData.callback(e.rowData, e.filedData);
-    }, b = () => e.filedData.caseColon ? e.filedData.caseColon(e.rowData, e.filedData) : !0, p = () => d(e.filedData, "link") ? typeof e.filedData.link == "function" ? e.filedData.link(e.rowData) : e.rowData[e.filedData.link] ? e.rowData[e.filedData.link] : e.filedData.link : "", i = () => d(e.filedData, "style") ? typeof e.filedData.style == "function" ? e.filedData.style(e.rowData) : e.rowData[e.filedData.style] ? e.rowData[e.filedData.style] : e.filedData.style : "", c = () => d(e.filedData, "title") ? typeof e.filedData.title == "function" ? e.filedData.title(e.rowData) : e.rowData[e.filedData.title] ? e.rowData[e.filedData.title] : e.filedData.title : "", l = () => d(e.filedData, "name") ? typeof e.filedData.name == "function" ? e.filedData.name(e.rowData) : e.rowData[e.filedData.name] ? e.rowData[e.filedData.name] : e.filedData.name : "", f = () => d(e.filedData, "class") ? typeof e.filedData.class == "function" ? e.filedData.class(e.rowData) : e.filedData.class : "", w = () => typeof e.filedData.comp.data == "function" ? e.filedData.comp.data(e.rowData) : e.filedData.comp.data;
-    return (o, n) => {
-      const O = z("router-link");
-      return b() ? (t(), r(D, { key: 0 }, [
-        a.filedData.type === "link" ? (t(), r("a", {
+  setup(e) {
+    const t = e, u = () => {
+      const n = {}, l = o("class"), r = o("title"), s = o("style"), D = o("id");
+      return l && (n.class = l), D && (n.id = D), r && (n.title = r), s && (n.style = s), t.filedData.attrs && Object.assign(n, t.filedData.attrs), n;
+    }, c = () => {
+      typeof t.filedData.callback == "function" && t.filedData.callback(t.rowData, t.filedData);
+    }, i = () => t.filedData.caseColon ? t.filedData.caseColon(t.rowData, t.filedData) : !0, o = (n) => Object.prototype.hasOwnProperty.call(t.filedData, n) ? typeof t.filedData[n] == "function" ? t.filedData[n](t.rowData) : t.rowData[t.filedData[n]] ? t.rowData[t.filedData[n]] : t.filedData[n] : "", y = () => typeof t.filedData.comp.data == "function" ? t.filedData.comp.data(t.rowData) : t.filedData.comp.data;
+    return (n, l) => {
+      const r = B("router-link");
+      return i() ? (a(), d(g, { key: 0 }, [
+        e.filedData.type === "link" ? (a(), d("a", H({
           key: 0,
-          onClick: n[0] || (n[0] = (m) => g()),
-          class: y(f()),
-          href: p(),
-          title: c(),
-          style: j(i())
-        }, [
-          a.filedData.name ? (t(), r(D, { key: 0 }, [
-            a.filedData.html ? (t(), s(k(a.filedData.tag ? a.filedData.tag : "span"), {
+          onClick: l[0] || (l[0] = (s) => c()),
+          href: o("link")
+        }, u()), [
+          e.filedData.name ? (a(), d(g, { key: 0 }, [
+            e.filedData.html ? (a(), f(b(e.filedData.tag ? e.filedData.tag : "span"), {
               key: 0,
-              innerHTML: l()
-            }, null, 8, ["innerHTML"])) : (t(), r(D, { key: 1 }, [
-              L(v(l()), 1)
+              innerHTML: o("name")
+            }, null, 8, ["innerHTML"])) : (a(), d(g, { key: 1 }, [
+              C(j(o("name")), 1)
             ], 64))
-          ], 64)) : h("", !0),
-          S(o.$slots, "default")
-        ], 14, J)) : a.filedData.type === "img" ? (t(), r(D, { key: 1 }, [
-          $("img", {
-            class: y(f()),
-            src: l(),
-            onClick: n[1] || (n[1] = (m) => g())
-          }, null, 10, K),
-          S(o.$slots, "default")
-        ], 64)) : a.filedData.type === "checkbox" ? (t(), r(D, { key: 2 }, [
-          T($("input", {
-            onClick: n[2] || (n[2] = (m) => g()),
-            "onUpdate:modelValue": n[3] || (n[3] = (m) => a.rowData.select = m),
-            type: "checkbox",
-            class: y(f()),
-            title: c(),
-            style: j(i())
-          }, null, 14, G), [
-            [P, a.rowData.select]
+          ], 64)) : m("", !0),
+          p(n.$slots, "default")
+        ], 16, Q)) : e.filedData.type === "img" ? (a(), d(g, { key: 1 }, [
+          S("img", H(u(), {
+            src: o("name"),
+            onClick: l[1] || (l[1] = (s) => c())
+          }), null, 16, W),
+          p(n.$slots, "default")
+        ], 64)) : e.filedData.type === "checkbox" ? (a(), d(g, { key: 2 }, [
+          P(S("input", H({
+            onClick: l[2] || (l[2] = (s) => c()),
+            "onUpdate:modelValue": l[3] || (l[3] = (s) => e.rowData.select = s),
+            type: "checkbox"
+          }, u()), null, 16), [
+            [x, e.rowData.select]
           ]),
-          S(o.$slots, "default")
-        ], 64)) : a.filedData.type === "router-link" ? (t(), s(O, {
+          p(n.$slots, "default")
+        ], 64)) : e.filedData.type === "router-link" ? (a(), f(r, H({
           key: 3,
-          class: y(f()),
-          to: p(),
-          onClick: n[4] || (n[4] = (m) => g()),
-          title: c(),
-          style: j(i())
-        }, {
-          default: H(() => [
-            a.filedData.name ? (t(), r(D, { key: 0 }, [
-              a.filedData.html ? (t(), s(k(a.filedData.tag ? a.filedData.tag : "span"), {
+          to: o("link"),
+          onClick: l[4] || (l[4] = (s) => c())
+        }, u()), {
+          default: h(() => [
+            e.filedData.name ? (a(), d(g, { key: 0 }, [
+              e.filedData.html ? (a(), f(b(e.filedData.tag ? e.filedData.tag : "span"), {
                 key: 0,
-                innerHTML: l()
-              }, null, 8, ["innerHTML"])) : (t(), r(D, { key: 1 }, [
-                L(v(l()), 1)
+                innerHTML: o("name")
+              }, null, 8, ["innerHTML"])) : (a(), d(g, { key: 1 }, [
+                C(j(o("name")), 1)
               ], 64))
-            ], 64)) : h("", !0),
-            S(o.$slots, "default")
+            ], 64)) : m("", !0),
+            p(n.$slots, "default")
           ]),
           _: 3
-        }, 8, ["class", "to", "title", "style"])) : a.filedData.type === "comp" ? (t(), r(D, { key: 4 }, [
-          a.filedData.comp ? (t(), s(k(a.filedData.tag ? a.filedData.tag : "div"), {
-            key: 0,
-            class: y(f())
-          }, {
-            default: H(() => [
-              (t(), s(k(a.filedData.comp.name), {
-                compData: w(),
-                rowData: a.rowData
+        }, 16, ["to"])) : e.filedData.type === "comp" ? (a(), d(g, { key: 4 }, [
+          e.filedData.comp ? (a(), f(b(e.filedData.tag ? e.filedData.tag : "div"), M(H({ key: 0 }, u())), {
+            default: h(() => [
+              (a(), f(b(e.filedData.comp.name), {
+                compData: y(),
+                rowData: e.rowData
               }, null, 8, ["compData", "rowData"])),
-              S(o.$slots, "default")
+              p(n.$slots, "default")
             ]),
             _: 3
-          }, 8, ["class"])) : h("", !0)
-        ], 64)) : (t(), s(k(a.filedData.tag ? a.filedData.tag : "div"), {
+          }, 16)) : m("", !0)
+        ], 64)) : (a(), f(b(e.filedData.tag ? e.filedData.tag : "div"), H({
           key: 5,
-          onClick: n[5] || (n[5] = (m) => g()),
-          class: y(f()),
-          title: c(),
-          style: j(i())
-        }, {
-          default: H(() => [
-            a.filedData.name ? (t(), r(D, { key: 0 }, [
-              a.filedData.html ? (t(), s(k("span"), {
+          onClick: l[5] || (l[5] = (s) => c())
+        }, u()), {
+          default: h(() => [
+            e.filedData.name ? (a(), d(g, { key: 0 }, [
+              e.filedData.html ? (a(), f(b("span"), {
                 key: 0,
-                innerHTML: l()
-              }, null, 8, ["innerHTML"])) : (t(), r(D, { key: 1 }, [
-                L(v(l()), 1)
+                innerHTML: o("name")
+              }, null, 8, ["innerHTML"])) : (a(), d(g, { key: 1 }, [
+                C(j(o("name")), 1)
               ], 64))
-            ], 64)) : h("", !0),
-            S(o.$slots, "default")
+            ], 64)) : m("", !0),
+            p(n.$slots, "default")
           ]),
           _: 3
-        }, 8, ["class", "title", "style"]))
-      ], 64)) : h("", !0);
+        }, 16))
+      ], 64)) : m("", !0);
     };
   }
-}), X = ["placeholder"], Y = {
+}), Z = ["placeholder"], _ = {
   name: "AutoSearch"
-}, Z = /* @__PURE__ */ Object.assign(Y, {
+}, ee = /* @__PURE__ */ Object.assign(_, {
   props: {
     autoSearch: Object,
     runSearch: Function,
     preHandler: Object
   },
-  setup(a) {
-    return (e, u) => T((t(), r("input", {
+  setup(e) {
+    return (t, u) => P((a(), d("input", {
       type: "text",
-      "onUpdate:modelValue": u[0] || (u[0] = (d) => a.preHandler.autoSearch.value = d),
-      onInput: u[1] || (u[1] = (d) => a.runSearch()),
-      class: y(a.autoSearch.class),
-      placeholder: a.autoSearch.placeholder ? a.autoSearch.placeholder : "Search"
-    }, null, 42, X)), [
-      [q, a.preHandler.autoSearch.value]
+      "onUpdate:modelValue": u[0] || (u[0] = (c) => e.preHandler.autoSearch.value = c),
+      onInput: u[1] || (u[1] = (c) => e.runSearch()),
+      class: $(e.autoSearch.class),
+      placeholder: e.autoSearch.placeholder ? e.autoSearch.placeholder : "Search"
+    }, null, 42, Z)), [
+      [I, e.preHandler.autoSearch.value]
     ]);
   }
-}), _ = { class: "col-12" }, ee = { class: "pagination float-left" }, ae = {
+}), te = { class: "col-12" }, ae = { class: "pagination float-left" }, ne = {
   key: 1,
   class: "page-link",
   href: "javascript:;"
-}, te = ["onClick"], le = {
+}, le = ["onClick"], re = {
   key: 1,
   class: "page-link",
   href: "javascript:;"
-}, ne = {
+}, ie = {
   name: "Pagination"
-}, re = /* @__PURE__ */ Object.assign(ne, {
+}, oe = /* @__PURE__ */ Object.assign(ie, {
   props: {
     preHandler: Object
   },
-  setup(a) {
-    const e = a, u = U(), d = R(), g = (c, l, f) => {
-      if (c <= f)
+  setup(e) {
+    const t = e, u = G(), c = K(), i = (l, r, s) => {
+      if (l <= s)
         return [];
-      var w, o = Math.ceil(c / f), n = Math.min(10, o);
-      if (l > o)
-        l = o, w = o - n;
+      var D, k = Math.ceil(l / s), w = Math.min(10, k);
+      if (r > k)
+        r = k, D = k - w;
       else {
-        var O = Math.ceil(n / 2);
-        w = l + O > o ? o + 1 - n : O + 1 > l ? 1 : l - O;
+        var T = Math.ceil(w / 2);
+        D = r + T > k ? k + 1 - w : T + 1 > r ? 1 : r - T;
       }
-      w = Math.max(1, w);
-      var m = Array.apply(null, new Array(n)).map(function($e, V) {
-        return w + V++;
+      D = Math.max(1, D);
+      var v = Array.apply(null, new Array(w)).map(function(Oe, E) {
+        return D + E++;
       });
-      return m.indexOf(1) === -1 && (m.shift(), m.unshift(1)), m.indexOf(o) === -1 && m.push(o), m;
-    }, b = async (c) => {
-      if (e.preHandler.dynamic) {
-        if (typeof e.preHandler.tableCahngePage == "function") {
-          let l = JSON.parse(JSON.stringify(u.query));
-          l.page = c, await d.push({ name: u.name, query: l }), u.query.page = c, e.preHandler.pagination.page = c, e.preHandler.tableCahngePage(c, u.query);
+      return v.indexOf(1) === -1 && (v.shift(), v.unshift(1)), v.indexOf(k) === -1 && v.push(k), v;
+    }, o = async (l) => {
+      if (t.preHandler.dynamic) {
+        if (typeof t.preHandler.tableCahngePage == "function") {
+          let r = JSON.parse(JSON.stringify(u.query));
+          r.page = l, await c.push({ name: u.name, query: r }), u.query.page = l, t.preHandler.pagination.page = l, t.preHandler.tableCahngePage(l, u.query);
         }
       } else
-        e.preHandler.pagination.page = c, e.preHandler.tableCahngePage(c, u.query);
-    }, p = x(() => g(e.preHandler.pagination.total, e.preHandler.pagination.page, e.preHandler.pagination.pageSize)), i = x(() => Math.ceil(e.preHandler.pagination.total / e.preHandler.pagination.pageSize));
-    return (c, l) => M(i) > 0 ? (t(), r("div", {
+        t.preHandler.pagination.page = l, t.preHandler.tableCahngePage(l, u.query);
+    }, y = z(() => i(t.preHandler.pagination.total, t.preHandler.pagination.page, t.preHandler.pagination.pageSize)), n = z(() => Math.ceil(t.preHandler.pagination.total / t.preHandler.pagination.pageSize));
+    return (l, r) => L(n) > 0 ? (a(), d("div", {
       key: 0,
-      class: y(["row mt-2", { disabledbutton: e.preHandler.loader }])
+      class: $(["row mt-2", { disabledbutton: t.preHandler.loader }])
     }, [
-      $("div", _, [
-        $("ul", ee, [
-          $("li", {
-            class: y(["page-item", { disabled: a.preHandler.pagination.page == 1 }])
+      S("div", te, [
+        S("ul", ae, [
+          S("li", {
+            class: $(["page-item", { disabled: e.preHandler.pagination.page == 1 }])
           }, [
-            a.preHandler.pagination.page > 1 ? (t(), r("a", {
+            e.preHandler.pagination.page > 1 ? (a(), d("a", {
               key: 0,
               class: "page-link",
               href: "javascript:;",
-              onClick: l[0] || (l[0] = (f) => b(parseInt(a.preHandler.pagination.page) - 1))
-            }, "prev")) : (t(), r("a", ae, "Prev"))
+              onClick: r[0] || (r[0] = (s) => o(parseInt(e.preHandler.pagination.page) - 1))
+            }, "prev")) : (a(), d("a", ne, "Prev"))
           ], 2),
-          (t(!0), r(D, null, C(M(p), (f) => (t(), r("li", {
-            class: y(["page-item", { active: a.preHandler.pagination.page == f }]),
-            key: f
+          (a(!0), d(g, null, O(L(y), (s) => (a(), d("li", {
+            class: $(["page-item", { active: e.preHandler.pagination.page == s }]),
+            key: s
           }, [
-            $("a", {
+            S("a", {
               class: "page-link",
               href: "javascript:;",
-              onClick: (w) => b(f)
-            }, v(f), 9, te)
+              onClick: (D) => o(s)
+            }, j(s), 9, le)
           ], 2))), 128)),
-          M(i) > 0 ? (t(), r("li", {
+          L(n) > 0 ? (a(), d("li", {
             key: 0,
-            class: y(["page-item", { disabled: a.preHandler.pagination.page >= M(i) }])
+            class: $(["page-item", { disabled: e.preHandler.pagination.page >= L(n) }])
           }, [
-            a.preHandler.pagination.page < M(i) ? (t(), r("a", {
+            e.preHandler.pagination.page < L(n) ? (a(), d("a", {
               key: 0,
               class: "page-link",
               href: "javascript:;",
-              onClick: l[1] || (l[1] = (f) => b(parseInt(a.preHandler.pagination.page) + 1))
-            }, " Next ")) : (t(), r("a", le, "Next"))
-          ], 2)) : h("", !0)
+              onClick: r[1] || (r[1] = (s) => o(parseInt(e.preHandler.pagination.page) + 1))
+            }, " Next ")) : (a(), d("a", re, "Next"))
+          ], 2)) : m("", !0)
         ])
       ])
-    ], 2)) : h("", !0);
+    ], 2)) : m("", !0);
   }
-}), ie = ["innerHTML"], oe = ["innerHTML"], ce = {
+}), ce = ["innerHTML"], se = ["innerHTML"], ue = {
   name: "ListHeader"
-}, se = /* @__PURE__ */ Object.assign(ce, {
+}, de = /* @__PURE__ */ Object.assign(ue, {
   props: {
     tableData: Object,
     preHandler: Object,
     searchData: Array
   },
-  setup(a) {
-    const e = a, u = E(!1);
-    A(u, (i, c) => {
-      e.searchData.forEach((l) => {
-        l.select = i;
+  setup(e) {
+    const t = e, u = R(!1), c = () => {
+      const r = {}, s = i("class"), D = i("title"), k = i("style"), w = i("id");
+      return s && (r.class = s), w && (r.id = w), D && (r.title = D), k && (r.style = k), t.tableData.line.attrs && Object.assign(r, t.tableData.line.attrs), r;
+    }, i = (r) => Object.prototype.hasOwnProperty.call(t.tableData.line, r) ? typeof t.tableData.line[r] == "function" ? t.tableData.line[r](t.rowData) : t.tableData.line[r] : "";
+    A(u, (r, s) => {
+      t.searchData.forEach((D) => {
+        D.select = r;
       });
     });
-    const d = () => {
-      var i = "";
-      e.preHandler.sorting.t === 1 ? i = e.preHandler.sorting.r ? 'a["' + e.preHandler.sorting.n + '"].localeCompare(b["' + e.preHandler.sorting.n + '"])' : 'b["' + e.preHandler.sorting.n + '"].localeCompare(a["' + e.preHandler.sorting.n + '"])' : e.preHandler.sorting.t === 2 && (i = e.preHandler.sorting.r ? 'a["' + e.preHandler.sorting.n + '"] - b["' + e.preHandler.sorting.n + '"]' : 'b["' + e.preHandler.sorting.n + '"] - a["' + e.preHandler.sorting.n + '"]');
-      let c = "return " + i;
-      return new Function("a,b", c);
-    }, g = (i) => e.preHandler.sorting.n === i ? e.preHandler.sorting.r ? "&#8650;" : "&#8648;" : "&#8645;", b = (i) => i && i.caseColon ? i.caseColon(i) : !0, p = (i) => {
-      if (i.sort) {
-        e.preHandler.sorting.r = e.preHandler.sorting.n === i.sort.n && !e.preHandler.sorting.r, e.preHandler.sorting.n = i.sort.n, e.preHandler.sorting.t = i.sort.t;
-        const c = d();
-        e.searchData.sort(c);
+    const o = () => {
+      var r = "";
+      t.preHandler.sorting.t === 1 ? r = t.preHandler.sorting.r ? 'a["' + t.preHandler.sorting.n + '"].localeCompare(b["' + t.preHandler.sorting.n + '"])' : 'b["' + t.preHandler.sorting.n + '"].localeCompare(a["' + t.preHandler.sorting.n + '"])' : t.preHandler.sorting.t === 2 && (r = t.preHandler.sorting.r ? 'a["' + t.preHandler.sorting.n + '"] - b["' + t.preHandler.sorting.n + '"]' : 'b["' + t.preHandler.sorting.n + '"] - a["' + t.preHandler.sorting.n + '"]');
+      let s = "return " + r;
+      return new Function("a,b", s);
+    }, y = (r) => t.preHandler.sorting.n === r ? t.preHandler.sorting.r ? "&#8650;" : "&#8648;" : "&#8645;", n = (r) => r && r.caseColon ? r.caseColon(r) : !0, l = (r) => {
+      if (r.sort) {
+        t.preHandler.sorting.r = t.preHandler.sorting.n === r.sort.n && !t.preHandler.sorting.r, t.preHandler.sorting.n = r.sort.n, t.preHandler.sorting.t = r.sort.t;
+        const s = o();
+        t.searchData.sort(s);
       }
     };
-    return (i, c) => (t(), s(k(a.tableData.line ? a.tableData.line.tag : "tr"), {
-      class: y(a.tableData.line.class)
-    }, {
-      default: H(() => [
-        (t(!0), r(D, null, C(a.tableData.data, (l) => (t(), r(D, {
-          key: l.name
+    return (r, s) => (a(), f(b(e.tableData.line ? e.tableData.line.tag : "tr"), M(N(c())), {
+      default: h(() => [
+        (a(!0), d(g, null, O(e.tableData.data, (D) => (a(), d(g, {
+          key: D.name
         }, [
-          b(l) ? (t(), s(k(l.tag ? l.tag : "th"), {
+          n(D) ? (a(), f(b(D.tag ? D.tag : "th"), {
             key: 0,
-            class: y(l.tclass ? l.tclass : ""),
-            style: j(l.style),
-            onClick: (f) => p(l)
+            class: $(D.tclass ? D.tclass : ""),
+            style: U(D.style),
+            onClick: (k) => l(D)
           }, {
-            default: H(() => [
-              l.checkbox ? T((t(), r("input", {
+            default: h(() => [
+              D.checkbox ? P((a(), d("input", {
                 key: 0,
                 type: "checkbox",
-                class: y(l.class),
-                "onUpdate:modelValue": c[0] || (c[0] = (f) => u.value = f)
+                class: $(D.class),
+                "onUpdate:modelValue": s[0] || (s[0] = (k) => u.value = k)
               }, null, 2)), [
-                [P, u.value]
-              ]) : (t(), r("span", {
+                [x, u.value]
+              ]) : (a(), d("span", {
                 key: 1,
-                class: y(l.class),
-                innerHTML: l.title
-              }, null, 10, ie)),
-              l.sort ? (t(), r("span", {
+                class: $(D.class),
+                innerHTML: D.title
+              }, null, 10, ce)),
+              D.sort ? (a(), d("span", {
                 key: 2,
-                innerHTML: g(l.sort.n)
-              }, null, 8, oe)) : h("", !0)
+                innerHTML: y(D.sort.n)
+              }, null, 8, se)) : m("", !0)
             ]),
             _: 2
-          }, 1032, ["class", "style", "onClick"])) : h("", !0)
+          }, 1032, ["class", "style", "onClick"])) : m("", !0)
         ], 64))), 128))
       ]),
       _: 1
-    }, 8, ["class"]));
+    }, 16));
   }
-}), ue = ["href", "title"], de = ["src"], fe = ["title"], De = {
+}), fe = ["href"], De = ["src"], ge = {
   name: "column"
-}, B = /* @__PURE__ */ Object.assign(De, {
+}, q = /* @__PURE__ */ Object.assign(ge, {
   props: {
     filedData: Object,
-    rowData: Object
+    rowData: {
+      type: Object,
+      default: {}
+    }
   },
-  setup(a) {
-    const e = a, u = (o, n) => n === 1 ? Object.prototype.toString.call(o) === "[object Object]" : n === 2 ? Object.prototype.toString.call(o) === "[object Array]" : n === 3 ? Object.prototype.toString.call(o) === "[object String]" : n === 4 ? Object.prototype.toString.call(o) === "[object Number]" : n === 5 ? Object.prototype.toString.call(o) === "[object Null]" : !1, d = (o, n) => u(o, 1) ? Object.prototype.hasOwnProperty.call(o, n) : !1, g = () => {
-      typeof e.filedData.callback == "function" && e.filedData.callback(e.rowData, e.filedData);
-    }, b = () => e.filedData.caseColon ? e.filedData.caseColon(e.rowData, e.filedData) : !0, p = () => d(e.filedData, "link") ? typeof e.filedData.link == "function" ? e.filedData.link(e.rowData) : e.rowData[e.filedData.link] ? e.rowData[e.filedData.link] : e.filedData.link : "", i = () => d(e.filedData, "style") ? typeof e.filedData.style == "function" ? e.filedData.style(e.rowData) : e.rowData[e.filedData.style] ? e.rowData[e.filedData.style] : e.filedData.style : "", c = () => d(e.filedData, "title") ? typeof e.filedData.title == "function" ? e.filedData.title(e.rowData) : e.rowData[e.filedData.title] ? e.rowData[e.filedData.title] : e.filedData.title : "", l = () => d(e.filedData, "name") ? typeof e.filedData.name == "function" ? e.filedData.name(e.rowData) : e.rowData[e.filedData.name] ? e.rowData[e.filedData.name] : e.filedData.name : "", f = () => d(e.filedData, "class") ? typeof e.filedData.class == "function" ? e.filedData.class(e.rowData) : e.filedData.class : "", w = () => typeof e.filedData.comp.data == "function" ? e.filedData.comp.data(e.rowData) : e.filedData.comp.data;
-    return (o, n) => {
-      const O = z("router-link");
-      return b() ? (t(), r(D, { key: 0 }, [
-        a.filedData.type === "link" ? (t(), r("a", {
+  setup(e) {
+    const t = e, u = () => {
+      const n = {}, l = c("class"), r = c("title"), s = c("style"), D = c("id");
+      return l && (n.class = l), D && (n.id = D), r && (n.title = r), s && (n.style = s), t.filedData.attrs && Object.assign(n, t.filedData.attrs), n;
+    }, c = (n) => Object.prototype.hasOwnProperty.call(t.filedData, n) ? typeof t.filedData[n] == "function" ? t.filedData[n](t.rowData) : t.rowData[t.filedData[n]] ? t.rowData[t.filedData[n]] : t.filedData[n] : "", i = () => {
+      typeof t.filedData.callback == "function" && t.filedData.callback(t.rowData, t.filedData);
+    }, o = () => t.filedData.caseColon ? t.filedData.caseColon(t.rowData, t.filedData) : !0, y = () => typeof t.filedData.comp.data == "function" ? t.filedData.comp.data(t.rowData) : t.filedData.comp.data;
+    return (n, l) => {
+      const r = B("router-link");
+      return o() ? (a(), d(g, { key: 0 }, [
+        e.filedData.type === "link" ? (a(), d("a", H({
           key: 0,
-          onClick: n[0] || (n[0] = (m) => g()),
-          class: y(f()),
-          href: p(),
-          title: c(),
-          style: j(i())
-        }, [
-          a.filedData.name ? (t(), r(D, { key: 0 }, [
-            a.filedData.html ? (t(), s(k(a.filedData.tag ? a.filedData.tag : "span"), {
+          onClick: l[0] || (l[0] = (s) => i()),
+          href: c("link")
+        }, u()), [
+          e.filedData.name ? (a(), d(g, { key: 0 }, [
+            e.filedData.html ? (a(), f(b(e.filedData.tag ? e.filedData.tag : "span"), {
               key: 0,
-              innerHTML: l()
-            }, null, 8, ["innerHTML"])) : (t(), r(D, { key: 1 }, [
-              L(v(l()), 1)
+              innerHTML: c("name")
+            }, null, 8, ["innerHTML"])) : (a(), d(g, { key: 1 }, [
+              C(j(c("name")), 1)
             ], 64))
-          ], 64)) : h("", !0),
-          S(o.$slots, "default")
-        ], 14, ue)) : a.filedData.type === "img" ? (t(), r(D, { key: 1 }, [
-          $("img", {
-            class: y(f()),
-            src: l(),
-            onClick: n[1] || (n[1] = (m) => g())
-          }, null, 10, de),
-          S(o.$slots, "default")
-        ], 64)) : a.filedData.type === "checkbox" ? (t(), r(D, { key: 2 }, [
-          T($("input", {
-            onClick: n[2] || (n[2] = (m) => g()),
-            "onUpdate:modelValue": n[3] || (n[3] = (m) => a.rowData.select = m),
-            type: "checkbox",
-            class: y(f()),
-            title: c(),
-            style: j(i())
-          }, null, 14, fe), [
-            [P, a.rowData.select]
+          ], 64)) : m("", !0),
+          p(n.$slots, "default")
+        ], 16, fe)) : e.filedData.type === "img" ? (a(), d(g, { key: 1 }, [
+          S("img", H(u(), {
+            src: c("name"),
+            onClick: l[1] || (l[1] = (s) => i())
+          }), null, 16, De),
+          p(n.$slots, "default")
+        ], 64)) : e.filedData.type === "checkbox" ? (a(), d(g, { key: 2 }, [
+          P(S("input", H({
+            onClick: l[2] || (l[2] = (s) => i()),
+            "onUpdate:modelValue": l[3] || (l[3] = (s) => e.rowData.select = s),
+            type: "checkbox"
+          }, u()), null, 16), [
+            [x, e.rowData.select]
           ]),
-          S(o.$slots, "default")
-        ], 64)) : a.filedData.type === "router-link" ? (t(), s(O, {
+          p(n.$slots, "default")
+        ], 64)) : e.filedData.type === "router-link" ? (a(), f(r, H({
           key: 3,
-          class: y(f()),
-          to: p(),
-          onClick: n[4] || (n[4] = (m) => g()),
-          title: c(),
-          style: j(i())
-        }, {
-          default: H(() => [
-            a.filedData.name ? (t(), r(D, { key: 0 }, [
-              a.filedData.html ? (t(), s(k(a.filedData.tag ? a.filedData.tag : "span"), {
+          to: c("link"),
+          onClick: l[4] || (l[4] = (s) => i())
+        }, u()), {
+          default: h(() => [
+            e.filedData.name ? (a(), d(g, { key: 0 }, [
+              e.filedData.html ? (a(), f(b(e.filedData.tag ? e.filedData.tag : "span"), {
                 key: 0,
-                innerHTML: l()
-              }, null, 8, ["innerHTML"])) : (t(), r(D, { key: 1 }, [
-                L(v(l()), 1)
+                innerHTML: c("name")
+              }, null, 8, ["innerHTML"])) : (a(), d(g, { key: 1 }, [
+                C(j(c("name")), 1)
               ], 64))
-            ], 64)) : h("", !0),
-            S(o.$slots, "default")
+            ], 64)) : m("", !0),
+            p(n.$slots, "default")
           ]),
           _: 3
-        }, 8, ["class", "to", "title", "style"])) : a.filedData.type === "comp" ? (t(), r(D, { key: 4 }, [
-          a.filedData.comp ? (t(), s(k(a.filedData.tag ? a.filedData.tag : "div"), {
-            key: 0,
-            class: y(f())
-          }, {
-            default: H(() => [
-              (t(), s(k(a.filedData.comp.name), {
-                compData: w(),
-                rowData: a.rowData
+        }, 16, ["to"])) : e.filedData.type === "comp" ? (a(), d(g, { key: 4 }, [
+          e.filedData.comp ? (a(), f(b(e.filedData.tag ? e.filedData.tag : "div"), M(H({ key: 0 }, u())), {
+            default: h(() => [
+              (a(), f(b(e.filedData.comp.name), {
+                compData: y(),
+                rowData: e.rowData
               }, null, 8, ["compData", "rowData"])),
-              S(o.$slots, "default")
+              p(n.$slots, "default")
             ]),
             _: 3
-          }, 8, ["class"])) : h("", !0)
-        ], 64)) : (t(), s(k(a.filedData.tag ? a.filedData.tag : "div"), {
+          }, 16)) : m("", !0)
+        ], 64)) : (a(), f(b(e.filedData.tag ? e.filedData.tag : "div"), H({
           key: 5,
-          onClick: n[5] || (n[5] = (m) => g()),
-          class: y(f()),
-          title: c(),
-          style: j(i())
-        }, {
-          default: H(() => [
-            a.filedData.list ? (t(!0), r(D, { key: 0 }, C(a.filedData.list, (m) => (t(), s(B, {
-              key: m.name,
-              filedData: m,
-              rowData: a.rowData
-            }, null, 8, ["filedData", "rowData"]))), 128)) : h("", !0),
-            a.filedData.name ? (t(), r(D, { key: 1 }, [
-              a.filedData.html ? (t(), s(k("span"), {
+          onClick: l[5] || (l[5] = (s) => i())
+        }, u()), {
+          default: h(() => [
+            e.filedData.list ? (a(!0), d(g, { key: 0 }, O(e.filedData.list, (s) => (a(), f(q, {
+              key: s.name,
+              filedData: s,
+              rowData: e.rowData
+            }, null, 8, ["filedData", "rowData"]))), 128)) : m("", !0),
+            e.filedData.name ? (a(), d(g, { key: 1 }, [
+              e.filedData.html ? (a(), f(b("span"), {
                 key: 0,
-                innerHTML: l()
-              }, null, 8, ["innerHTML"])) : (t(), r(D, { key: 1 }, [
-                L(v(l()), 1)
+                innerHTML: c("name")
+              }, null, 8, ["innerHTML"])) : (a(), d(g, { key: 1 }, [
+                C(j(c("name")), 1)
               ], 64))
-            ], 64)) : h("", !0),
-            S(o.$slots, "default")
+            ], 64)) : m("", !0),
+            p(n.$slots, "default")
           ]),
           _: 3
-        }, 8, ["class", "title", "style"]))
-      ], 64)) : h("", !0);
+        }, 16))
+      ], 64)) : m("", !0);
     };
   }
-}), ge = {
+}), ye = {
   name: "Row"
-}, ye = /* @__PURE__ */ Object.assign(ge, {
+}, be = /* @__PURE__ */ Object.assign(ye, {
   props: {
     tableData: Object,
     rowData: Object,
     filedData: Object
   },
-  setup(a) {
-    const e = a, u = () => e.filedData.caseColon ? e.filedData.caseColon(e.rowData, e.filedData) : !0;
-    return (d, g) => u() ? (t(), s(k(a.filedData.tag ? a.filedData.tag : "td"), {
-      key: 0,
-      class: y(a.filedData.class)
-    }, {
-      default: H(() => [
-        a.filedData.list ? (t(!0), r(D, { key: 0 }, C(a.filedData.list, (b, p) => (t(), s(B, {
-          key: p + "-body",
-          filedData: b,
-          rowData: a.rowData
-        }, null, 8, ["filedData", "rowData"]))), 128)) : h("", !0)
+  setup(e) {
+    const t = e, u = () => {
+      const o = {}, y = c("class"), n = c("title"), l = c("style"), r = c("id");
+      return y && (o.class = y), r && (o.id = r), n && (o.title = n), l && (o.style = l), t.filedData.attrs && Object.assign(o, t.filedData.attrs), o;
+    }, c = (o) => Object.prototype.hasOwnProperty.call(t.filedData, o) ? typeof t.filedData[o] == "function" ? t.filedData[o](t.rowData) : t.rowData[t.filedData[o]] ? t.rowData[t.filedData[o]] : t.filedData[o] : "", i = () => t.filedData.caseColon ? t.filedData.caseColon(t.rowData, t.filedData) : !0;
+    return (o, y) => i() ? (a(), f(b(e.filedData.tag ? e.filedData.tag : "td"), M(H({ key: 0 }, u())), {
+      default: h(() => [
+        e.filedData.list ? (a(!0), d(g, { key: 0 }, O(e.filedData.list, (n) => (a(), f(q, {
+          key: n,
+          filedData: n,
+          rowData: e.rowData
+        }, null, 8, ["filedData", "rowData"]))), 128)) : m("", !0)
       ]),
       _: 1
-    }, 8, ["class"])) : h("", !0);
+    }, 16)) : m("", !0);
   }
 }), me = {
   name: "LineTable"
-}, ke = /* @__PURE__ */ Object.assign(me, {
+}, he = /* @__PURE__ */ Object.assign(me, {
   props: {
     tableData: Object
   },
-  setup(a) {
-    return (e, u) => (t(), s(k(a.tableData.line.tag ? a.tableData.line.tag : "tr"), {
-      class: y(a.tableData.line.class)
-    }, {
-      default: H(() => [
-        S(e.$slots, "default")
+  setup(e) {
+    const t = e, u = () => {
+      const i = {}, o = c("class"), y = c("title"), n = c("style"), l = c("id");
+      return o && (i.class = o), l && (i.id = l), y && (i.title = y), n && (i.style = n), t.tableData.line.attrs && Object.assign(i, t.tableData.line.attrs), i;
+    }, c = (i) => Object.prototype.hasOwnProperty.call(t.tableData.line, i) ? typeof t.tableData.line[i] == "function" ? t.tableData.line[i](t.rowData) : t.tableData.line[i] : "";
+    return (i, o) => (a(), f(b(e.tableData.line.tag ? e.tableData.line.tag : "tr"), M(N(u())), {
+      default: h(() => [
+        p(i.$slots, "default")
       ]),
       _: 3
-    }, 8, ["class"]));
+    }, 16));
   }
-}), he = {
+}), ke = {
   name: "ListBody"
-}, be = /* @__PURE__ */ Object.assign(he, {
+}, He = /* @__PURE__ */ Object.assign(ke, {
   props: {
     tableData: Object,
     preHandler: Object,
     searchData: Array
   },
-  setup(a) {
-    return (e, u) => (t(!0), r(D, null, C(a.searchData, (d) => (t(), s(ke, {
-      key: d,
-      tableData: a.tableData
+  setup(e) {
+    const t = e, u = () => {
+      const i = {}, o = c("class"), y = c("title"), n = c("style"), l = c("id");
+      return o && (i.class = o), l && (i.id = l), y && (i.title = y), n && (i.style = n), t.tableData.line.attrs && Object.assign(i, t.tableData.line.attrs), i;
+    }, c = (i) => Object.prototype.hasOwnProperty.call(t.tableData.line, i) ? typeof t.tableData.line[i] == "function" ? t.tableData.line[i](t.rowData) : t.tableData.line[i] : "";
+    return (i, o) => (a(!0), d(g, null, O(e.searchData, (y) => (a(), f(he, {
+      key: y,
+      tableData: e.tableData
     }, {
-      default: H(() => [
-        (t(!0), r(D, null, C(a.tableData.data, (g) => (t(), s(ye, {
-          key: g,
-          rowData: d,
-          filedData: g,
-          tableData: a.tableData
+      default: h(() => [
+        (a(!0), d(g, null, O(e.tableData.data, (n) => (a(), f(be, {
+          key: n,
+          rowData: y,
+          filedData: n,
+          tableData: e.tableData
         }, null, 8, ["rowData", "filedData", "tableData"]))), 128)),
-        d.open ? (t(), s(k(a.tableData.line.tag ? a.tableData.line.tag : "tr"), {
-          key: 0,
-          class: y(a.tableData.line.class)
-        }, {
-          default: H(() => [
-            a.tableData.line.tag === "tr" || !a.tableData.line.tag ? (t(), s(k(e.filedData.tag ? e.filedData.tag : "td"), { key: 0 }, {
-              default: H(() => [
-                (t(), s(k(d.component), { pageData: d }, null, 8, ["pageData"]))
+        y.open ? (a(), f(b(e.tableData.line.tag ? e.tableData.line.tag : "tr"), M(H({ key: 0 }, u())), {
+          default: h(() => [
+            e.tableData.line.tag === "tr" ? (a(), f(b(i.filedData.tag ? i.filedData.tag : "td"), {
+              key: 0,
+              colspan: e.tableData.data.length
+            }, {
+              default: h(() => [
+                (a(), f(b(y.component), { pageData: y }, null, 8, ["pageData"]))
               ]),
               _: 2
-            }, 1024)) : (t(), s(k(e.filedData.tag ? e.filedData.tag : "td"), { key: 1 }, {
-              default: H(() => [
-                (t(), s(k(d.component), { pageData: d }, null, 8, ["pageData"]))
+            }, 1032, ["colspan"])) : (a(), f(b(i.filedData.tag ? i.filedData.tag : "div"), { key: 1 }, {
+              default: h(() => [
+                (a(), f(b(y.component), { pageData: y }, null, 8, ["pageData"]))
               ]),
               _: 2
             }, 1024))
           ]),
           _: 2
-        }, 1032, ["class"])) : h("", !0)
+        }, 1040)) : m("", !0)
       ]),
       _: 2
     }, 1032, ["tableData"]))), 128));
   }
-}), He = {
+}), pe = {
   name: "SectionBody"
-}, pe = /* @__PURE__ */ Object.assign(He, {
+}, Se = /* @__PURE__ */ Object.assign(pe, {
   props: {
     column: Object,
     preHandler: Object,
     searchData: Array,
     runSearch: Function
   },
-  setup(a) {
-    return (e, u) => a.column.type === "comp" ? (t(), r(D, { key: 0 }, [
-      a.column.name === "tableHead" ? (t(), s(se, {
+  setup(e) {
+    return (t, u) => e.column.type === "comp" ? (a(), d(g, { key: 0 }, [
+      e.column.name === "tableHead" ? (a(), f(de, {
         key: 0,
-        tableData: a.column,
-        searchData: a.searchData,
-        preHandler: a.preHandler
-      }, null, 8, ["tableData", "searchData", "preHandler"])) : a.column.name === "tableBody" ? (t(), s(be, {
+        tableData: e.column,
+        searchData: e.searchData,
+        preHandler: e.preHandler
+      }, null, 8, ["tableData", "searchData", "preHandler"])) : e.column.name === "tableBody" ? (a(), f(He, {
         key: 1,
-        tableData: a.column,
-        searchData: a.searchData,
-        preHandler: a.preHandler
-      }, null, 8, ["tableData", "searchData", "preHandler"])) : a.column.name === "pagination" ? (t(), s(re, {
+        tableData: e.column,
+        searchData: e.searchData,
+        preHandler: e.preHandler
+      }, null, 8, ["tableData", "searchData", "preHandler"])) : e.column.name === "pagination" ? (a(), f(oe, {
         key: 2,
-        searchData: a.searchData,
-        preHandler: a.preHandler
-      }, null, 8, ["searchData", "preHandler"])) : a.column.name === "autosearch" ? (t(), s(Z, {
+        searchData: e.searchData,
+        preHandler: e.preHandler
+      }, null, 8, ["searchData", "preHandler"])) : e.column.name === "autosearch" ? (a(), f(ee, {
         key: 3,
-        autoSearch: a.column.data,
-        runSearch: a.runSearch,
-        preHandler: a.preHandler
-      }, null, 8, ["autoSearch", "runSearch", "preHandler"])) : (t(), s(k(a.column.name), {
+        autoSearch: e.column.data,
+        runSearch: e.runSearch,
+        preHandler: e.preHandler
+      }, null, 8, ["autoSearch", "runSearch", "preHandler"])) : (a(), f(b(e.column.name), {
         key: 4,
-        compData: a.column.data,
+        compData: e.column.data,
         rowData: {}
       }, null, 8, ["compData"])),
-      a.column.list ? (t(), s(N, {
+      e.column.list ? (a(), f(V, {
         key: 5,
-        columns: a.column.list,
-        searchData: a.searchData,
-        preHandler: a.preHandler,
-        runSearch: a.runSearch
-      }, null, 8, ["columns", "searchData", "preHandler", "runSearch"])) : h("", !0)
-    ], 64)) : (t(), s(W, {
+        columns: e.column.list,
+        searchData: e.searchData,
+        preHandler: e.preHandler,
+        runSearch: e.runSearch
+      }, null, 8, ["columns", "searchData", "preHandler", "runSearch"])) : m("", !0)
+    ], 64)) : (a(), f(Y, {
       key: 1,
-      filedData: a.column,
+      filedData: e.column,
       rowData: {}
     }, {
-      default: H(() => [
-        a.column.list ? (t(), s(N, {
+      default: h(() => [
+        e.column.list ? (a(), f(V, {
           key: 0,
-          columns: a.column.list,
-          searchData: a.searchData,
-          preHandler: a.preHandler,
-          runSearch: a.runSearch
-        }, null, 8, ["columns", "searchData", "preHandler", "runSearch"])) : h("", !0)
+          columns: e.column.list,
+          searchData: e.searchData,
+          preHandler: e.preHandler,
+          runSearch: e.runSearch
+        }, null, 8, ["columns", "searchData", "preHandler", "runSearch"])) : m("", !0)
       ]),
       _: 1
     }, 8, ["filedData"]));
   }
-}), Se = {
+}), $e = {
   name: "Section"
-}, N = /* @__PURE__ */ Object.assign(Se, {
+}, V = /* @__PURE__ */ Object.assign($e, {
   props: {
     columns: Array,
     preHandler: Object,
     searchData: Array,
     runSearch: Function
   },
-  setup(a) {
-    const e = (u) => typeof u.caseColon == "function" ? u.caseColon() : !0;
-    return (u, d) => (t(!0), r(D, null, C(a.columns, (g) => (t(), r(D, { key: g }, [
-      e(g) ? (t(), s(pe, {
+  setup(e) {
+    const t = (u) => typeof u.caseColon == "function" ? u.caseColon() : !0;
+    return (u, c) => (a(!0), d(g, null, O(e.columns, (i) => (a(), d(g, { key: i }, [
+      t(i) ? (a(), f(Se, {
         key: 0,
-        column: g,
-        preHandler: a.preHandler,
-        searchData: a.searchData,
-        runSearch: a.runSearch
-      }, null, 8, ["column", "preHandler", "searchData", "runSearch"])) : h("", !0)
+        column: i,
+        preHandler: e.preHandler,
+        searchData: e.searchData,
+        runSearch: e.runSearch
+      }, null, 8, ["column", "preHandler", "searchData", "runSearch"])) : m("", !0)
     ], 64))), 128));
   }
 }), we = {
@@ -551,7 +538,7 @@ const J = ["href", "title"], K = ["src"], G = ["title"], Q = {
   class: "loader"
 }, je = {
   name: "AutoPage"
-}, Ce = /* @__PURE__ */ Object.assign(je, {
+}, Me = /* @__PURE__ */ Object.assign(je, {
   props: {
     pageSetting: Object,
     allData: {
@@ -559,41 +546,41 @@ const J = ["href", "title"], K = ["src"], G = ["title"], Q = {
       default: []
     }
   },
-  setup(a) {
-    const e = a, u = F([]), d = F([]), g = (i) => i.replace(/Ğ/g, "\u011F").replace(/Ü/g, "\xFC").replace(/Ş/g, "\u015F").replace(/I/g, "\u0131").replace(/İ/g, "i").replace(/Ö/g, "\xF6").replace(/Ç/g, "\xE7").toLowerCase();
-    A(e.allData, () => {
-      b();
-    }), A(e.pageSetting.preHandler.pagination, () => {
-      e.pageSetting.preHandler.dynamic || b();
+  setup(e) {
+    const t = e, u = F([]), c = F([]), i = (n) => n.replace(/Ğ/g, "\u011F").replace(/Ü/g, "\xFC").replace(/Ş/g, "\u015F").replace(/I/g, "\u0131").replace(/İ/g, "i").replace(/Ö/g, "\xF6").replace(/Ç/g, "\xE7").toLowerCase();
+    A(t.allData, () => {
+      o();
+    }), A(t.pageSetting.preHandler.pagination, () => {
+      t.pageSetting.preHandler.dynamic || o();
     });
-    const b = () => {
-      let i = e.pageSetting.preHandler.autoSearch && e.pageSetting.preHandler.autoSearch.value.length > 0 ? e.allData.filter((c) => {
-        let l = [];
-        return e.pageSetting.preHandler.autoSearch.alans.forEach((w) => {
-          l.push(g(c[w].toString()));
-        }), l.join(" ").indexOf(g(e.pageSetting.preHandler.autoSearch.value)) !== -1;
-      }) : e.allData;
-      u.splice(0, u.length), u.push(...i), p();
-    }, p = () => {
-      if (d.splice(0, d.length), e.pageSetting.preHandler.dynamic)
-        d.push(...u);
+    const o = () => {
+      let n = t.pageSetting.preHandler.autoSearch && t.pageSetting.preHandler.autoSearch.value.length > 0 ? t.allData.filter((l) => {
+        let r = [];
+        return t.pageSetting.preHandler.autoSearch.alans.forEach((D) => {
+          r.push(i(l[D].toString()));
+        }), r.join(" ").indexOf(i(t.pageSetting.preHandler.autoSearch.value)) !== -1;
+      }) : t.allData;
+      u.splice(0, u.length), u.push(...n), y();
+    }, y = () => {
+      if (c.splice(0, c.length), t.pageSetting.preHandler.dynamic)
+        c.push(...u);
       else {
-        const i = u.length, c = e.pageSetting.preHandler.pagination;
-        c.total = i;
-        const l = Math.ceil(i / c.pageSize);
-        c.page > l && l > 0 && (c.page = l);
-        const f = (c.page - 1) * c.pageSize;
-        d.push(...u.slice(f, f + c.pageSize));
+        const n = u.length, l = t.pageSetting.preHandler.pagination;
+        l.total = n;
+        const r = Math.ceil(n / l.pageSize);
+        l.page > r && r > 0 && (l.page = r);
+        const s = (l.page - 1) * l.pageSize;
+        c.push(...u.slice(s, s + l.pageSize));
       }
     };
-    return I(() => {
-      b();
-    }), (i, c) => a.pageSetting.loader ? (t(), r("div", we, "Loader...")) : (t(), s(N, {
+    return J(() => {
+      o();
+    }), (n, l) => e.pageSetting.loader ? (a(), d("div", we, "Loader...")) : (a(), f(V, {
       key: 0,
-      columns: a.pageSetting.pageData,
-      preHandler: a.pageSetting.preHandler,
-      searchData: d,
-      runSearch: b
+      columns: e.pageSetting.pageData,
+      preHandler: e.pageSetting.preHandler,
+      searchData: c,
+      runSearch: o
     }, null, 8, ["columns", "preHandler", "searchData"]));
   }
 });
@@ -625,6 +612,6 @@ class Le {
   }
 }
 export {
-  Ce as AutoPage,
+  Me as AutoPage,
   Le as createPageSetting
 };
